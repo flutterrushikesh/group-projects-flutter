@@ -17,28 +17,35 @@ class _LoginScreenState extends State {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: 700,
+        height: double.infinity,
         width: double.infinity,
         decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(
+              "assets/login.png",
+            ),
+            // opacity: 0.3,
+            fit: BoxFit.fill,
+          ),
           // color: Color.fromARGB(255, 52, 146, 63),
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(255, 39, 150, 43),
-              Color.fromARGB(255, 137, 221, 157),
-            ],
-            begin: Alignment.bottomRight,
-            end: Alignment.topLeft,
-          ),
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(500),
-            // bottomRight: Radius.circular(150),
-          ),
+          // gradient: LinearGradient(
+          //   colors: [
+          //     Color.fromARGB(255, 39, 150, 43),
+          //     Color.fromARGB(255, 137, 221, 157),
+          //   ],
+          //   begin: Alignment.bottomRight,
+          //   end: Alignment.topLeft,
+          // ),
+          // borderRadius: BorderRadius.only(
+          //   bottomLeft: Radius.circular(500),
+          //   // bottomRight: Radius.circular(150),
+          // ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 180,
+              height: 115,
             ),
             Text(
               "Welcome",
@@ -53,7 +60,15 @@ class _LoginScreenState extends State {
               width: 300,
               padding: const EdgeInsets.all(15),
               decoration: const BoxDecoration(
-                color: Colors.white,
+                image: DecorationImage(
+                  image: AssetImage(
+                    "assets/login2.png",
+                  ),
+                  // opacity: 0.9,
+                  // opacity: 0.3,
+                  fit: BoxFit.fill,
+                ),
+                // color: Color.fromARGB(65, 216, 212, 212),
                 borderRadius: BorderRadius.all(
                   Radius.circular(25),
                 ),
