@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:farm/home.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -19,7 +20,15 @@ class _LoginScreenState extends State {
         height: 700,
         width: double.infinity,
         decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 6, 124, 145),
+          // color: Color.fromARGB(255, 52, 146, 63),
+          gradient: LinearGradient(
+            colors: [
+              Color.fromARGB(255, 39, 150, 43),
+              Color.fromARGB(255, 137, 221, 157),
+            ],
+            begin: Alignment.bottomRight,
+            end: Alignment.topLeft,
+          ),
           borderRadius: BorderRadius.only(
             bottomLeft: Radius.circular(500),
             // bottomRight: Radius.circular(150),
@@ -130,7 +139,15 @@ class _LoginScreenState extends State {
                         height: 43,
                         width: 220,
                         child: ElevatedButton(
-                          onPressed: () {},
+                          onPressed: () {
+                            setState(() {
+                              Navigator.of(context).pushReplacement(
+                                MaterialPageRoute(
+                                  builder: (context) => HomePage(),
+                                ),
+                              );
+                            });
+                          },
                           style: const ButtonStyle(
                             shape: MaterialStatePropertyAll(
                               RoundedRectangleBorder(
@@ -140,7 +157,7 @@ class _LoginScreenState extends State {
                               ),
                             ),
                             backgroundColor: MaterialStatePropertyAll(
-                                Color.fromARGB(255, 6, 124, 145)),
+                                Color.fromARGB(255, 6, 145, 38)),
                           ),
                           child: Text(
                             "Login",
