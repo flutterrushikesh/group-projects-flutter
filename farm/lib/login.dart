@@ -141,7 +141,7 @@ class _LoginScreenState extends State {
                         child: ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              Navigator.of(context).pushReplacement(
+                              Navigator.of(context).push(
                                 MaterialPageRoute(
                                   builder: (context) => const HomePage(),
                                 ),
