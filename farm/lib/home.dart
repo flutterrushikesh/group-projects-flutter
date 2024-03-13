@@ -22,12 +22,16 @@ class _HomePage extends State {
         backgroundColor: const Color.fromARGB(255, 63, 169, 67),
       ),
       body: Container(
+        color: Colors.grey.shade300,
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              const Padding(padding: EdgeInsets.all(10)),
+              const SizedBox(
+                height: 15,
+              ),
+              // First Row Vegetables
               const Text(
                 "Vegetable's",
                 style: TextStyle(
@@ -51,7 +55,35 @@ class _HomePage extends State {
                             decoration: const BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage(
-                                  "assets/image3.png",
+                                  "assets/images/image3.png",
+                                ),
+                                // opacity: 0.3,
+                                fit: BoxFit.fill,
+                              ),
+                              color: Colors.grey,
+                              borderRadius: BorderRadius.all(
+                                Radius.circular(15),
+                              ),
+                              boxShadow: [
+                                BoxShadow(
+                                    color: Color.fromARGB(255, 179, 176, 176),
+                                    offset: Offset(10, 10),
+                                    blurRadius: 8),
+                              ],
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 20,
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(10),
+                            height: 200,
+                            width: 150,
+                            // color: Colors.grey,
+                            decoration: const BoxDecoration(
+                              image: DecorationImage(
+                                image: AssetImage(
+                                  "assets/images/bhendi.png",
                                 ),
                                 // opacity: 0.3,
                                 fit: BoxFit.fill,
@@ -79,7 +111,7 @@ class _HomePage extends State {
                             decoration: const BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage(
-                                  "assets/image1.png",
+                                  "assets/images/image.png",
                                 ),
                                 // opacity: 0.3,
                                 fit: BoxFit.fill,
@@ -107,7 +139,7 @@ class _HomePage extends State {
                             decoration: const BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage(
-                                  "assets/image.png",
+                                  "assets/images/gobhi.png",
                                 ),
                                 // opacity: 0.3,
                                 fit: BoxFit.fill,
@@ -133,27 +165,13 @@ class _HomePage extends State {
                             width: 150,
                             // color: Colors.grey,
                             decoration: const BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
+                              image: DecorationImage(
+                                image: AssetImage(
+                                  "assets/images/mashroom.png",
+                                ),
+                                // opacity: 0.3,
+                                fit: BoxFit.fill,
                               ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
                               color: Colors.grey,
                               borderRadius: BorderRadius.all(
                                 Radius.circular(15),
@@ -172,9 +190,9 @@ class _HomePage extends State {
                   ],
                 ),
               ),
-              const Padding(padding: EdgeInsets.all(10)),
+              // Fruits Second Row
               const Text(
-                "Vegetable's",
+                "Fruits",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
@@ -185,141 +203,149 @@ class _HomePage extends State {
                 padding: const EdgeInsets.all(15),
                 child: Row(
                   children: [
-                    SingleChildScrollView(
-                      child: Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/image3.png",
-                                ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/fruits/image.png",
                           ),
-                          const SizedBox(
-                            width: 20,
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/fruits/banana.png",
                           ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/image1.png",
-                                ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/fruits/bit.png",
                           ),
-                          const SizedBox(
-                            width: 20,
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/fruits/mango.png",
                           ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/image.png",
-                                ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/fruits/stwabbery.png",
                           ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                          ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
                         ],
                       ),
                     ),
                   ],
                 ),
               ),
-              const Padding(padding: EdgeInsets.all(10)),
+              // Daily Foods 3rd Row
               const Text(
-                "Vegetable's",
+                "Daily Foods",
                 style: TextStyle(
                   fontSize: 20,
                   fontWeight: FontWeight.w700,
@@ -330,422 +356,140 @@ class _HomePage extends State {
                 padding: const EdgeInsets.all(15),
                 child: Row(
                   children: [
-                    SingleChildScrollView(
-                      child: Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/image3.png",
-                                ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/pulses/pulses.png",
                           ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/image1.png",
-                                ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/image.png",
-                                ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                          ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
                         ],
                       ),
                     ),
-                  ],
-                ),
-              ),
-              const Padding(padding: EdgeInsets.all(10)),
-              const Text(
-                "Vegetable's",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.all(15),
-                child: Row(
-                  children: [
-                    SingleChildScrollView(
-                      child: Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/image3.png",
-                                ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/pulses/rice.png",
                           ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/image1.png",
-                                ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/image.png",
-                                ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                          ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
                         ],
                       ),
                     ),
-                  ],
-                ),
-              ),
-              const Padding(padding: EdgeInsets.all(10)),
-              const Text(
-                "Vegetable's",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
-              ),
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.all(15),
-                child: Row(
-                  children: [
-                    SingleChildScrollView(
-                      child: Row(
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/image3.png",
-                                ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/fruits/bit.png",
                           ),
-                          const SizedBox(
-                            width: 20,
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/fruits/mango.png",
                           ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/image1.png",
-                                ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/fruits/stwabbery.png",
                           ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/image.png",
-                                ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
-                              ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(
-                            width: 20,
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                          ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
                         ],
                       ),
                     ),
