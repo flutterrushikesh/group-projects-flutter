@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:farm/home.dart';
 
@@ -56,7 +57,7 @@ class _LoginScreenState extends State {
             ),
             Container(
               margin: const EdgeInsets.all(40),
-              height: 339,
+              height: 350,
               width: 300,
               padding: const EdgeInsets.all(15),
               decoration: const BoxDecoration(
@@ -92,30 +93,36 @@ class _LoginScreenState extends State {
                   ),
                   const SizedBox(height: 20),
                   TextFormField(
-                    controller: usernameController,
-                    decoration: const InputDecoration(
-                      label: Text("Enter username"),
-                      prefixIcon: Icon(Icons.person),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                        borderSide: BorderSide(
-                          color: Color.fromARGB(255, 6, 124, 145),
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(
-                            10,
+                      controller: usernameController,
+                      decoration: const InputDecoration(
+                        label: Text("Enter username"),
+                        prefixIcon: Icon(Icons.person),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                          borderSide: BorderSide(
+                            color: Color.fromARGB(255, 6, 124, 145),
                           ),
                         ),
-                        borderSide: BorderSide(
-                          color: Colors.red,
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(
+                              10,
+                            ),
+                          ),
+                          borderSide: BorderSide(
+                            color: Colors.red,
+                          ),
                         ),
                       ),
-                    ),
-                  ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please enter username";
+                        } else {
+                          return null;
+                        }
+                      }),
                   const SizedBox(
                     height: 25,
                   ),
@@ -143,6 +150,13 @@ class _LoginScreenState extends State {
                         ),
                       ),
                     ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Please enter password";
+                      } else {
+                        return null;
+                      }
+                    },
                   ),
                   const SizedBox(
                     height: 30,
@@ -150,17 +164,40 @@ class _LoginScreenState extends State {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      SizedBox(
+                      Container(
                         height: 43,
                         width: 220,
+                        decoration: const BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromARGB(255, 154, 147, 147),
+                              spreadRadius: 2,
+                              blurRadius: 10,
+                              offset: Offset(-5, 5),
+                            )
+                          ],
+                        ),
                         child: ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              Navigator.of(context).push(
-                                MaterialPageRoute(
-                                  builder: (context) => const HomePage(),
-                                ),
-                              );
+                              if ("rushi" == usernameController.text &&
+                                  "1234" == passwordController.text) {
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(const SnackBar(
+                                  content: Text(
+                                    "Login successful",
+                                  ),
+                                ));
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => const HomePage(),
+                                  ),
+                                );
+                              } else {
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                    const SnackBar(
+                                        content: Text("Login Failed")));
+                              }
                             });
                           },
                           style: const ButtonStyle(
@@ -172,7 +209,8 @@ class _LoginScreenState extends State {
                               ),
                             ),
                             backgroundColor: MaterialStatePropertyAll(
-                                Color.fromARGB(255, 6, 145, 38)),
+                              Color.fromARGB(255, 6, 145, 38),
+                            ),
                           ),
                           child: Text(
                             "Login",
