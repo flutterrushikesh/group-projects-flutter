@@ -1,3 +1,5 @@
+// import 'package:carousel_slider/carousel_options.dart';
+// import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -7,6 +9,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePage extends State {
+  // int activeIndex = 0;
+  // final urlImages = [
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXq6L92NPX8eQrR07SsP_xgn68JnYcL1gd_Q&usqp=CAU",
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhmz1R5M1CRlxdQef8SqHhlBt3s5fxR-NelQ&usqp=CAU",
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjSqepRK0BNpuI0Xu8V0pDxRF4sxkkAIgFCQ&usqp=CAU",
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI-Ts58nxAYhCz0zxcqWmoWcNtWq8UqSg-0A&usqp=CAU",
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKsaEnyKvMkF7hBEzHqQfj79GbOBtVjtuHPA&usqp=CAU",
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsSMmlasmwCsDM7CuGbdYO4QTG5SAaVotbRA&usqp=CAU",
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG91UuKUzJUyX-pPyefbGIFmzFJFiJ_MFqEA&usqp=CAU",
+  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVNzNNAPkRUFfp7vpFllQm8ccGxJOqeElSfA&usqp=CAU",
+  // ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +33,49 @@ class _HomePage extends State {
             fontWeight: FontWeight.bold,
           ),
         ),
+        actions: [
+          PopupMenuButton(
+            icon: const Icon(
+              Icons.more_vert,
+              color: Colors.white,
+            ),
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                child: Row(
+                  children: [
+                    const Icon(Icons.settings),
+                    Container(
+                      margin: const EdgeInsets.only(left: 10),
+                      child: const Text("Setting"),
+                    ),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                child: Row(
+                  children: [
+                    const Icon(Icons.share),
+                    Container(
+                      margin: const EdgeInsets.only(left: 10),
+                      child: const Text("Share"),
+                    ),
+                  ],
+                ),
+              ),
+              PopupMenuItem(
+                child: Row(
+                  children: [
+                    const Icon(Icons.info),
+                    Container(
+                      margin: const EdgeInsets.only(left: 10),
+                      child: const Text("Info"),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          )
+        ],
         backgroundColor: const Color.fromARGB(255, 63, 169, 67),
       ),
       body: Container(
@@ -47,6 +104,31 @@ class _HomePage extends State {
                     SingleChildScrollView(
                       child: Row(
                         children: [
+                          // CarouselSlider.builder(
+                          //   options: CarouselOptions(
+                          //     height: 300,
+                          //     // viewportFraction: 1,
+                          //     autoPlay: true,
+                          //     reverse: true,
+                          //     autoPlayInterval: const Duration(
+                          //       seconds: 2,
+                          //     ),
+                          //     onPageChanged: (index, reason) =>
+                          //         setState(() => activeIndex = index),
+                          //     // pageSnapping: false,
+                          //     // enlargeCenterPage: true,
+                          //     // enlargeStrategy: CenterPageEnlargeStrategy.height,
+                          //   ),
+                          //   itemCount: urlImages.length,
+                          //   itemBuilder: (context, index, realIndex) {
+                          //     final urlImage = urlImages[index];
+
+                          //     return buildImage(urlImage, index);
+                          //   },
+                          // ),
+                          const SizedBox(
+                            height: 10,
+                          ),
                           Container(
                             padding: const EdgeInsets.all(10),
                             height: 200,
@@ -502,4 +584,16 @@ class _HomePage extends State {
       ),
     );
   }
+
+  // Widget buildImage(String urlImage, int index) => Container(
+  //       margin: const EdgeInsets.symmetric(
+  //         horizontal: 10,
+  //       ),
+  //       // color: Colors.grey,
+  //       child: Image.network(
+  //         urlImage,
+  //         fit: BoxFit.cover,
+  //         width: 400,
+  //       ),
+  // );
 }
