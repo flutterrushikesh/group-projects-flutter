@@ -143,7 +143,7 @@ class _LoginScreenState extends State {
                             setState(() {
                               Navigator.of(context).pushReplacement(
                                 MaterialPageRoute(
-                                  builder: (context) => HomePage(),
+                                  builder: (context) => const HomePage(),
                                 ),
                               );
                             });
