@@ -1,0 +1,165 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
+  @override
+  State createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State {
+  //Controllers
+  TextEditingController usernameController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Container(
+        height: 700,
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          color: Color.fromARGB(255, 6, 124, 145),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(500),
+            // bottomRight: Radius.circular(150),
+          ),
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const SizedBox(
+              height: 180,
+            ),
+            Text(
+              "Welcome",
+              style: GoogleFonts.inter(
+                fontSize: 28,
+                color: Colors.white,
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.all(40),
+              height: 339,
+              width: 300,
+              padding: const EdgeInsets.all(15),
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.all(
+                  Radius.circular(25),
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black,
+                    spreadRadius: 0.0,
+                    blurRadius: 100,
+                  )
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Login here...",
+                    style: GoogleFonts.quicksand(
+                      fontSize: 23,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 20),
+                  TextFormField(
+                    controller: usernameController,
+                    decoration: const InputDecoration(
+                      label: Text("Enter username"),
+                      prefixIcon: Icon(Icons.person),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        borderSide: BorderSide(
+                          color: Color.fromARGB(255, 6, 124, 145),
+                        ),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(
+                            10,
+                          ),
+                        ),
+                        borderSide: BorderSide(
+                          color: Colors.red,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 25,
+                  ),
+                  TextFormField(
+                    controller: passwordController,
+                    decoration: const InputDecoration(
+                      label: Text("Enter username"),
+                      prefixIcon: Icon(Icons.lock),
+                      suffixIcon: Icon(Icons.remove_red_eye),
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
+                        ),
+                        borderSide:
+                            BorderSide(color: Color.fromARGB(255, 6, 124, 145)),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(
+                            10,
+                          ),
+                        ),
+                        borderSide: BorderSide(
+                          color: Colors.red,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 30,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SizedBox(
+                        height: 43,
+                        width: 220,
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: const ButtonStyle(
+                            shape: MaterialStatePropertyAll(
+                              RoundedRectangleBorder(
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(10),
+                                ),
+                              ),
+                            ),
+                            backgroundColor: MaterialStatePropertyAll(
+                                Color.fromARGB(255, 6, 124, 145)),
+                          ),
+                          child: Text(
+                            "Login",
+                            style: GoogleFonts.lato(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 20,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
