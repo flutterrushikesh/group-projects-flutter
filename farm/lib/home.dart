@@ -1,6 +1,9 @@
 // import 'package:carousel_slider/carousel_options.dart';
 // import 'package:carousel_slider/carousel_slider.dart';
+import 'package:farm/vegetable/bhendi/bhendi.dart';
 import 'package:flutter/material.dart';
+import 'package:farm/vegetable/tamato/tamato.dart';
+// import 'package:flutter/widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -26,7 +29,7 @@ class _HomePage extends State {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Farmer's Friend",
+          "Information of Daily Foods",
           style: TextStyle(
             color: Colors.black,
             fontSize: 22,
@@ -133,57 +136,93 @@ class _HomePage extends State {
                           const SizedBox(
                             height: 10,
                           ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/images/image3.png",
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => const Tamato(),
+                                  ),
+                                );
+                              });
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(10),
+                              height: 200,
+                              width: 150,
+                              // color: Colors.grey,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    "assets/images/image3.png",
+                                  ),
+                                  // opacity: 0.3,
+                                  fit: BoxFit.fill,
                                 ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
+                                color: Colors.grey,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Color.fromARGB(255, 179, 176, 176),
+                                      offset: Offset(10, 10),
+                                      blurRadius: 8),
+                                ],
                               ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
+                              child: const Text(
+                                "Tamato",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 179, 176, 176),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
                             ),
                           ),
                           const SizedBox(
                             width: 20,
                           ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/images/bhendi.png",
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => const Ladyfinger(),
+                                  ),
+                                );
+                              });
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(10),
+                              height: 200,
+                              width: 150,
+                              // color: Colors.grey,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    "assets/images/bhendi.png",
+                                  ),
+                                  // opacity: 0.3,
+                                  fit: BoxFit.fill,
                                 ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
+                                color: Colors.grey,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Color.fromARGB(255, 187, 184, 184),
+                                      offset: Offset(10, 10),
+                                      blurRadius: 8),
+                                ],
                               ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
+                              child: const Text(
+                                "Ladyfinger",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
                             ),
                           ),
                           const SizedBox(

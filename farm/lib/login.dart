@@ -46,7 +46,7 @@ class _LoginScreenState extends State {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 67,
+              height: 50,
             ),
             Text(
               "Welcome",
@@ -180,7 +180,7 @@ class _LoginScreenState extends State {
                         child: ElevatedButton(
                           onPressed: () {
                             setState(() {
-                              if ("rushi" == usernameController.text &&
+                              if ("admin" == usernameController.text &&
                                   "1234" == passwordController.text) {
                                 ScaffoldMessenger.of(context)
                                     .showSnackBar(const SnackBar(
@@ -188,7 +188,7 @@ class _LoginScreenState extends State {
                                     "Login successful",
                                   ),
                                 ));
-                                Navigator.of(context).push(
+                                Navigator.of(context).pushReplacement(
                                   MaterialPageRoute(
                                     builder: (context) => const HomePage(),
                                   ),

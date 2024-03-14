@@ -36,17 +36,45 @@ class _SplashScreen extends State<SplashScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        width: double.infinity,
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [
-              Color.fromARGB(255, 39, 150, 43),
-              Color.fromARGB(255, 137, 221, 157),
-            ],
-            begin: Alignment.bottomRight,
-            end: Alignment.topLeft,
+          image: DecorationImage(
+            image: AssetImage(
+              "assets/splash.png",
+            ),
+            // opacity: 0.9,
+            fit: BoxFit.fill,
           ),
         ),
+        // child: const Text("Information of Daily Foods",
+        //     style: TextStyle(color: Colors.white)),
+        width: double.infinity,
+        height: double.infinity,
+        child: const Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 100,
+            ),
+            Text(
+              "Information of Daily Foods",
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 30,
+                fontWeight: FontWeight.w800,
+              ),
+            ),
+          ],
+        ),
+        // decoration: const BoxDecoration(
+        //   gradient: LinearGradient(
+        //     colors: [
+        //       Color.fromARGB(255, 39, 150, 43),
+        //       Color.fromARGB(255, 137, 221, 157),
+        //     ],
+        //     begin: Alignment.bottomRight,
+        //     end: Alignment.topLeft,
+        //   ),
+        // ),
         // child: const Column(
         //   mainAxisAlignment: MainAxisAlignment.center,
         //   children: [
