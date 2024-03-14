@@ -34,6 +34,10 @@ class _HomePage extends State {
           ),
         ),
         actions: [
+          const Icon(
+            Icons.favorite_border,
+            color: Colors.red,
+          ),
           PopupMenuButton(
             icon: const Icon(
               Icons.more_vert,
@@ -426,6 +430,312 @@ class _HomePage extends State {
                 ),
               ),
               // Daily Foods 3rd Row
+              const Text(
+                "Daily Foods",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.all(15),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/pulses/pulses.png",
+                          ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/pulses/rice.png",
+                          ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/fruits/bit.png",
+                          ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/fruits/mango.png",
+                          ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/fruits/stwabbery.png",
+                          ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // Daily Foods 4 Row
+              const Text(
+                "Daily Foods",
+                style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.w700,
+                ),
+              ),
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                padding: const EdgeInsets.all(15),
+                child: Row(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/pulses/pulses.png",
+                          ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/pulses/rice.png",
+                          ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/fruits/bit.png",
+                          ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/fruits/mango.png",
+                          ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    Container(
+                      padding: const EdgeInsets.all(10),
+                      height: 200,
+                      width: 150,
+                      // color: Colors.grey,
+                      decoration: const BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(
+                            "assets/fruits/stwabbery.png",
+                          ),
+                          // opacity: 0.3,
+                          fit: BoxFit.fill,
+                        ),
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(15),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              // Daily Foods 5th Row
               const Text(
                 "Daily Foods",
                 style: TextStyle(

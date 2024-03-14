@@ -45,7 +45,7 @@ class _LoginScreenState extends State {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             const SizedBox(
-              height: 115,
+              height: 67,
             ),
             Text(
               "Welcome",
