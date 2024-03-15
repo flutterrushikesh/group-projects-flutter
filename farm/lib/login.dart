@@ -77,10 +77,11 @@ class _LoginScreenState extends State {
               const SizedBox(
                 height: 50,
               ),
-              Text(
+              const Text(
                 "Welcome",
-                style: GoogleFonts.inter(
-                  fontSize: 28,
+                style: TextStyle(
+                  fontSize: 50,
+                  fontWeight: FontWeight.w700,
                   color: Colors.white,
                 ),
               ),
