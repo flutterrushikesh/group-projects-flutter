@@ -20,6 +20,8 @@ Future<List<Login>> retData() async {
     retList.length,
     (i) {
       return Login(
+        name: retList[i]['name'],
+        phone: retList[i]['phone'],
         username: retList[i]['username'],
         password: retList[i]['password'],
       );

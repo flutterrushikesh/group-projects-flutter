@@ -3,7 +3,7 @@ import 'package:farm/splash.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'logindatabase.dart';
-import 'loginmodel.dart';
+// import 'loginmodel.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -18,13 +18,6 @@ void main() async {
       )''');
     },
   );
-
-  Login user1 = Login(
-    username: "admin",
-    password: "1234",
-  );
-  await insertData(user1);
-  // print(await getretData());
 }
 
 // print(await retData());
