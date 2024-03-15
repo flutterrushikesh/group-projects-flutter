@@ -7,7 +7,7 @@ Future<void> insertData(Login obj) async {
   final localDB = await database;
 
   await localDB.insert(
-    'Login',
+    'Sign',
     obj.loginMap(),
     conflictAlgorithm: ConflictAlgorithm.replace,
   );
@@ -15,7 +15,7 @@ Future<void> insertData(Login obj) async {
 
 Future<List<Login>> retData() async {
   final localDB = await database;
-  List<Map<String, dynamic>> retList = await localDB.query("Login");
+  List<Map<String, dynamic>> retList = await localDB.query("Sign");
   return List.generate(
     retList.length,
     (i) {
