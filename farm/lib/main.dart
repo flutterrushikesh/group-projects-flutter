@@ -9,15 +9,19 @@ void main() async {
   runApp(const MyApp());
 
   database = openDatabase(
-    join(await getDatabasesPath(), "login.db"),
+    join(await getDatabasesPath(), "login1DB.db"),
     version: 1,
     onCreate: (db, version) async {
-      await db.execute('''CREATE TABLE Login(
+      await db.execute('''CREATE TABLE Sign(
+        name TEXT,
+        phone TEXT PRIMARY KEY,
         username TEXT,
-        password INT
+        password TEXT
       )''');
     },
   );
+  print("Print data");
+  print(await retData());
 }
 
 // print(await retData());
