@@ -1,7 +1,8 @@
+import 'package:farm/logindatabase.dart';
 import 'package:flutter/material.dart';
-
 import 'package:google_fonts/google_fonts.dart';
 import 'package:farm/home.dart';
+import 'loginmodel.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -11,9 +12,10 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State {
   //Controllers
+  TextEditingController nameController = TextEditingController();
   TextEditingController usernameController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-
+  TextEditingController phoneController = TextEditingController();
   bool isLogin = false;
 
   Scaffold isLoginScreen() {
@@ -283,19 +285,28 @@ class _LoginScreenState extends State {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Text(
+                "Let's register in",
+                style: GoogleFonts.lato(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
+              ),
               const SizedBox(
-                height: 50,
+                height: 5,
               ),
               Text(
-                "Welcome",
-                style: GoogleFonts.inter(
-                  fontSize: 28,
+                "Info. of dail foods",
+                style: GoogleFonts.lato(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w700,
                   color: Colors.white,
                 ),
               ),
               Container(
                 margin: const EdgeInsets.all(40),
-                height: 350,
+                height: 375,
                 width: 300,
                 padding: const EdgeInsets.all(15),
                 decoration: const BoxDecoration(
@@ -322,72 +333,74 @@ class _LoginScreenState extends State {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      "Login here...",
-                      style: GoogleFonts.quicksand(
-                        fontSize: 23,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    const SizedBox(height: 20),
                     TextFormField(
-                        controller: usernameController,
-                        decoration: const InputDecoration(
-                          label: Text("Enter username"),
-                          prefixIcon: Icon(Icons.person),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                            borderSide: BorderSide(
-                              color: Color.fromARGB(255, 6, 124, 145),
-                            ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(
-                                10,
-                              ),
-                            ),
-                            borderSide: BorderSide(
-                              color: Colors.red,
-                            ),
-                          ),
+                      controller: nameController,
+                      autofocus: false,
+                      decoration: const InputDecoration(
+                        prefixIcon: Icon(
+                          Icons.person,
                         ),
-                        validator: (value) {
-                          if (value == null || value.isEmpty) {
-                            return "Please enter username";
-                          } else {
-                            return null;
-                          }
-                        }),
+                        hintText: "Enter name",
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please enter name";
+                        } else {
+                          return null;
+                        }
+                      },
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    TextFormField(
+                      controller: usernameController,
+                      autofocus: false,
+                      decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.person_4_outlined),
+                        hintText: "username",
+                      ),
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please enter username";
+                        } else {
+                          return null;
+                        }
+                      },
+                    ),
+                    const SizedBox(
+                      height: 25,
+                    ),
+                    TextFormField(
+                      controller: phoneController,
+                      autofocus: false,
+                      decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.phone),
+                        hintText: "Enter phone no",
+                      ),
+                      keyboardType: TextInputType.phone,
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return "Please enter phone number";
+                        } else {
+                          return null;
+                        }
+                      },
+                    ),
                     const SizedBox(
                       height: 25,
                     ),
                     TextFormField(
                       controller: passwordController,
+                      autofocus: false,
+                      obscureText: true,
+                      obscuringCharacter: "*",
                       decoration: const InputDecoration(
-                        label: Text("Enter username"),
                         prefixIcon: Icon(Icons.lock),
                         suffixIcon: Icon(Icons.remove_red_eye),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 6, 124, 145)),
-                        ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(
-                              10,
-                            ),
-                          ),
-                          borderSide: BorderSide(
-                            color: Colors.red,
-                          ),
-                        ),
+                        hintText: "Enter password",
                       ),
+                      keyboardType: TextInputType.emailAddress,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return "Please enter password";
@@ -418,24 +431,8 @@ class _LoginScreenState extends State {
                           child: ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                if ("admin" == usernameController.text &&
-                                    "1234" == passwordController.text) {
-                                  ScaffoldMessenger.of(context)
-                                      .showSnackBar(const SnackBar(
-                                    content: Text(
-                                      "Login successful",
-                                    ),
-                                  ));
-                                  Navigator.of(context).pushReplacement(
-                                    MaterialPageRoute(
-                                      builder: (context) => const HomePage(),
-                                    ),
-                                  );
-                                } else {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(
-                                          content: Text("Login Failed")));
-                                }
+                                addData();
+                                clearControllers();
                               });
                             },
                             style: const ButtonStyle(
@@ -451,7 +448,7 @@ class _LoginScreenState extends State {
                               ),
                             ),
                             child: Text(
-                              "Login",
+                              "Sign in",
                               style: GoogleFonts.lato(
                                 fontWeight: FontWeight.w600,
                                 fontSize: 20,
@@ -475,5 +472,39 @@ class _LoginScreenState extends State {
   @override
   Widget build(BuildContext context) {
     return isLoginScreen();
+  }
+
+  void addData() {
+    if (usernameController.text.trim().isNotEmpty &&
+        nameController.text.trim().isNotEmpty &&
+        passwordController.text.trim().isNotEmpty &&
+        phoneController.text.trim().isNotEmpty) {
+      Login userInfo = Login(
+        name: nameController.text,
+        username: usernameController.text,
+        password: passwordController.text,
+        phone: phoneController.text,
+      );
+      insertData(userInfo);
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Details saved"),
+        ),
+      );
+      isLogin = false;
+    } else {
+      ScaffoldMessenger.of(context).showSnackBar(
+        const SnackBar(
+          content: Text("Please enter details"),
+        ),
+      );
+    }
+  }
+
+  void clearControllers() {
+    nameController.clear();
+    usernameController.clear();
+    passwordController.clear();
+    phoneController.clear();
   }
 }
