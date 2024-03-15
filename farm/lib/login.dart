@@ -180,6 +180,7 @@ class _LoginScreenState extends State {
                           ),
                         ),
                       ),
+                      textInputAction: TextInputAction.done,
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return "Please enter password";
@@ -213,6 +214,7 @@ class _LoginScreenState extends State {
                               print(userData);
                               setState(() {
                                 loginSuccess(userData);
+                                clearControllers();
                               });
                             },
                             style: const ButtonStyle(
