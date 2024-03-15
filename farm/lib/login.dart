@@ -1,7 +1,7 @@
 import 'package:farm/logindatabase.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:farm/home.dart';
+import 'home.dart';
 import 'loginmodel.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,6 +17,20 @@ class _LoginScreenState extends State {
   TextEditingController passwordController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
   bool isLogin = false;
+
+  void loginSuccess() async {
+    List userData = await retData();
+    for (int i = 0; i < userData.length; i++) {
+      if (userData[i]['username'] == usernameController &&
+          userData[i]['password'] == passwordController) {
+        Navigator.of(context).pushReplacement(
+          MaterialPageRoute(
+            builder: (context) => const HomePage(),
+          ),
+        );
+      }
+    }
+  }
 
   Scaffold isLoginScreen() {
     if (isLogin == false) {
@@ -184,24 +198,7 @@ class _LoginScreenState extends State {
                           child: ElevatedButton(
                             onPressed: () {
                               setState(() {
-                                if ("admin" == usernameController.text &&
-                                    "1234" == passwordController.text) {
-                                  ScaffoldMessenger.of(context)
-                                      .showSnackBar(const SnackBar(
-                                    content: Text(
-                                      "Login successful",
-                                    ),
-                                  ));
-                                  Navigator.of(context).pushReplacement(
-                                    MaterialPageRoute(
-                                      builder: (context) => const HomePage(),
-                                    ),
-                                  );
-                                } else {
-                                  ScaffoldMessenger.of(context).showSnackBar(
-                                      const SnackBar(
-                                          content: Text("Login Failed")));
-                                }
+                                loginSuccess();
                               });
                             },
                             style: const ButtonStyle(
