@@ -1,11 +1,8 @@
-// import 'package:carousel_slider/carousel_options.dart';
-// import 'package:carousel_slider/carousel_slider.dart';
 import 'package:farm/friuts/banana/banana.dart';
 import 'package:farm/friuts/pineapple/pineapple.dart';
 import 'package:farm/vegetable/bhendi/bhendi.dart';
 import 'package:flutter/material.dart';
 import 'package:farm/vegetable/tamato/tamato.dart';
-// import 'package:flutter/widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -931,16 +928,4 @@ class _HomePage extends State {
       ),
     );
   }
-
-  // Widget buildImage(String urlImage, int index) => Container(
-  //       margin: const EdgeInsets.symmetric(
-  //         horizontal: 10,
-  //       ),
-  //       // color: Colors.grey,
-  //       child: Image.network(
-  //         urlImage,
-  //         fit: BoxFit.cover,
-  //         width: 400,
-  //       ),
-  // );
 }
