@@ -1,14 +1,20 @@
 class Login {
-  final String username;
-  final String password;
+  String name;
+  String phone;
+  String username;
+  String password;
 
   Login({
     required this.username,
     required this.password,
+    required this.name,
+    required this.phone,
   });
 
   Map<String, String> loginMap() {
     return {
+      'name': name,
+      'phone': phone,
       'username': username,
       'password': password,
     };
@@ -16,6 +22,6 @@ class Login {
 
   @override
   String toString() {
-    return "{username:$username, password:$password}";
+    return "{name:$name, phone:$phone,username:$username, password:$password}";
   }
 }
