@@ -11,20 +11,23 @@ void main() async {
   database = openDatabase(
     join(await getDatabasesPath(), "login.db"),
     version: 1,
-    onCreate: (db, version) {
-      db.execute('''CREATE TABLE Login(
+    onCreate: (db, version) async {
+      await db.execute('''CREATE TABLE Login(
         username TEXT,
         password INT
       )''');
     },
   );
 
-  Login user1 = Login(username: "Rushi", password: "1234");
-  insertData(user1);
-
-  // print(await retData());
+  Login user1 = Login(
+    username: "admin",
+    password: "1234",
+  );
+  await insertData(user1);
+  // print(await getretData());
 }
 
+// print(await retData());
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
