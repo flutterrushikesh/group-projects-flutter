@@ -1,8 +1,11 @@
 class Login {
-  String username;
-  String password;
+  final String username;
+  final String password;
 
-  Login({required this.username, required this.password});
+  Login({
+    required this.username,
+    required this.password,
+  });
 
   Map<String, String> loginMap() {
     return {
