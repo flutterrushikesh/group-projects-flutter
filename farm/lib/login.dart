@@ -18,14 +18,25 @@ class _LoginScreenState extends State {
   TextEditingController phoneController = TextEditingController();
   bool isLogin = false;
 
-  void loginSuccess() async {
-    List userData = await retData();
-    for (int i = 0; i < userData.length; i++) {
-      if (userData[i]['username'] == usernameController &&
-          userData[i]['password'] == passwordController) {
+  void loginSuccess(List obj) {
+    print(obj);
+    for (int i = 0; i < obj.length; i++) {
+      if (obj[i].username == usernameController.text &&
+          obj[i].password == passwordController.text) {
         Navigator.of(context).pushReplacement(
           MaterialPageRoute(
             builder: (context) => const HomePage(),
+          ),
+        );
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Login sucsessful"),
+          ),
+        );
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("User not found"),
           ),
         );
       }
@@ -196,9 +207,11 @@ class _LoginScreenState extends State {
                             ],
                           ),
                           child: ElevatedButton(
-                            onPressed: () {
+                            onPressed: () async {
+                              List userData = await retData();
+                              print(userData);
                               setState(() {
-                                loginSuccess();
+                                loginSuccess(userData);
                               });
                             },
                             style: const ButtonStyle(
