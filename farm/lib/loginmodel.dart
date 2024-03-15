@@ -5,10 +5,10 @@ class Login {
   String password;
 
   Login({
-    required this.username,
-    required this.password,
     required this.name,
     required this.phone,
+    required this.username,
+    required this.password,
   });
 
   Map<String, String> loginMap() {
