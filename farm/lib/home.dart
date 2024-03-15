@@ -236,7 +236,7 @@ class _HomePage extends State {
                             decoration: const BoxDecoration(
                               image: DecorationImage(
                                 image: AssetImage(
-                                  "assets/images/image.png",
+                                  "assets/images/flower.png",
                                 ),
                                 // opacity: 0.3,
                                 fit: BoxFit.fill,
@@ -251,6 +251,14 @@ class _HomePage extends State {
                                     offset: Offset(10, 10),
                                     blurRadius: 8),
                               ],
+                            ),
+                            child: const Text(
+                              "Cauliflower  ",
+                              style: TextStyle(
+                                backgroundColor: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                              ),
                             ),
                           ),
                           const SizedBox(

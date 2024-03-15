@@ -14,8 +14,8 @@ class _Tamato extends State {
         title: const Text(
           "Tamato",
           style: TextStyle(
-            color: Colors.black,
-            fontSize: 22,
+            color: Colors.white,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -63,6 +63,70 @@ class _Tamato extends State {
           )
         ],
         backgroundColor: Colors.red,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 179, 176, 176),
+                        offset: Offset(10, 10),
+                        blurRadius: 8),
+                  ],
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20),
+                  ),
+                  color: Color.fromARGB(255, 228, 180, 177)),
+              alignment: Alignment.center,
+              width: 400,
+              height: 520,
+              child: Container(
+                padding: const EdgeInsets.all(8),
+                child: const Row(
+                  children: [
+                    Column(
+                      children: [
+                        Text(
+                          "Tamato Information",
+                          style: TextStyle(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                        Text(
+                          '''  Calories: 16
+  Fat: 0.2g
+  Sodium: 5mg
+  Carbohydrates: 3.5g
+  Fiber: 1.1g
+  Sugars: 2.4g
+  Protein: 0.8g
+  Vitamin C: 12.5mg
+  Vitamin K: 7.2mcg
+  Potassium: 215.7mg
+  Vitamin A: 38.2mcg
+  Folate: 13.7mcg
+  Beta carotene: 408.6mcg
+  Lycopene: 2341.4mcg
+  Vitamin E: 0.5mg
+  ''',
+                          style: TextStyle(
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
