@@ -1,5 +1,7 @@
 // import 'package:carousel_slider/carousel_options.dart';
 // import 'package:carousel_slider/carousel_slider.dart';
+import 'package:farm/friuts/banana/banana.dart';
+import 'package:farm/friuts/pineapple/pineapple.dart';
 import 'package:farm/vegetable/bhendi/bhendi.dart';
 import 'package:flutter/material.dart';
 import 'package:farm/vegetable/tamato/tamato.dart';
@@ -12,18 +14,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePage extends State {
-  // int activeIndex = 0;
-  // final urlImages = [
-  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXq6L92NPX8eQrR07SsP_xgn68JnYcL1gd_Q&usqp=CAU",
-  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhmz1R5M1CRlxdQef8SqHhlBt3s5fxR-NelQ&usqp=CAU",
-  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjSqepRK0BNpuI0Xu8V0pDxRF4sxkkAIgFCQ&usqp=CAU",
-  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI-Ts58nxAYhCz0zxcqWmoWcNtWq8UqSg-0A&usqp=CAU",
-  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKsaEnyKvMkF7hBEzHqQfj79GbOBtVjtuHPA&usqp=CAU",
-  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsSMmlasmwCsDM7CuGbdYO4QTG5SAaVotbRA&usqp=CAU",
-  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG91UuKUzJUyX-pPyefbGIFmzFJFiJ_MFqEA&usqp=CAU",
-  //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVNzNNAPkRUFfp7vpFllQm8ccGxJOqeElSfA&usqp=CAU",
-  // ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,7 +22,7 @@ class _HomePage extends State {
           "Information of Daily Foods",
           style: TextStyle(
             color: Colors.black,
-            fontSize: 22,
+            fontSize: 25,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -111,28 +101,6 @@ class _HomePage extends State {
                     SingleChildScrollView(
                       child: Row(
                         children: [
-                          // CarouselSlider.builder(
-                          //   options: CarouselOptions(
-                          //     height: 300,
-                          //     // viewportFraction: 1,
-                          //     autoPlay: true,
-                          //     reverse: true,
-                          //     autoPlayInterval: const Duration(
-                          //       seconds: 2,
-                          //     ),
-                          //     onPageChanged: (index, reason) =>
-                          //         setState(() => activeIndex = index),
-                          //     // pageSnapping: false,
-                          //     // enlargeCenterPage: true,
-                          //     // enlargeStrategy: CenterPageEnlargeStrategy.height,
-                          //   ),
-                          //   itemCount: urlImages.length,
-                          //   itemBuilder: (context, index, realIndex) {
-                          //     final urlImage = urlImages[index];
-
-                          //     return buildImage(urlImage, index);
-                          //   },
-                          // ),
                           const SizedBox(
                             height: 10,
                           ),
@@ -323,7 +291,7 @@ class _HomePage extends State {
                   ],
                 ),
               ),
-              // Fruits Second Row
+              // Fruits 2nd Row
               const Text(
                 "Fruits",
                 style: TextStyle(
@@ -336,57 +304,79 @@ class _HomePage extends State {
                 padding: const EdgeInsets.all(15),
                 child: Row(
                   children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/fruits/image.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const PineApple(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/fruits/image.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/fruits/banana.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/fruits/banana.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                     const SizedBox(
