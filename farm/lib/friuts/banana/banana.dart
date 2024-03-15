@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class Tamato extends StatefulWidget {
-  const Tamato({super.key});
+class Banana extends StatefulWidget {
+  const Banana({super.key});
   @override
-  State createState() => _Tamato();
+  State createState() => _Banana();
 }
 
-class _Tamato extends State {
+class _Banana extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Tamato",
+          "Banana",
           style: TextStyle(
             color: Colors.white,
             fontSize: 30,
@@ -25,7 +25,7 @@ class _Tamato extends State {
             color: Colors.white,
           ),
         ],
-        backgroundColor: Colors.red,
+        backgroundColor: const Color.fromARGB(255, 245, 240, 101),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -44,7 +44,7 @@ class _Tamato extends State {
                     borderRadius: BorderRadius.all(
                       Radius.circular(20),
                     ),
-                    color: Color.fromARGB(255, 228, 163, 122)),
+                    color: Color.fromARGB(255, 223, 228, 122)),
                 alignment: Alignment.center,
                 width: 400,
                 height: 520,
@@ -55,7 +55,7 @@ class _Tamato extends State {
                       Column(
                         children: [
                           Text(
-                            "Tamato Information",
+                            "Banana Information",
                             style: TextStyle(
                               fontSize: 25,
                               fontWeight: FontWeight.w500,
@@ -103,7 +103,7 @@ class _Tamato extends State {
                     borderRadius: BorderRadius.all(
                       Radius.circular(20),
                     ),
-                    color: Color.fromARGB(255, 228, 163, 122)),
+                    color: Color.fromARGB(255, 223, 228, 122)),
                 alignment: Alignment.center,
                 width: 400,
                 height: 520,
@@ -114,7 +114,7 @@ class _Tamato extends State {
                       Column(
                         children: [
                           Text(
-                            "Tamato Information",
+                            "Banana Information",
                             style: TextStyle(
                               fontSize: 25,
                               fontWeight: FontWeight.w500,
