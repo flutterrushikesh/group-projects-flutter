@@ -93,19 +93,19 @@ class _LoginScreenState extends State {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
-                height: 50,
+                height: 25,
               ),
               const Text(
                 "Welcome",
                 style: TextStyle(
-                  fontSize: 50,
+                  fontSize: 30,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
                 ),
               ),
               Container(
                 margin: const EdgeInsets.all(40),
-                height: 359,
+                height: 340,
                 width: 300,
                 padding: const EdgeInsets.all(15),
                 decoration: const BoxDecoration(
@@ -277,25 +277,20 @@ class _LoginScreenState extends State {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                "Let's register in",
-                style: GoogleFonts.lato(
-                  fontSize: 25,
-                  fontWeight: FontWeight.w700,
-                  color: Colors.white,
-                ),
-              ),
               const SizedBox(
-                height: 5,
+                height: 20,
               ),
               Text(
-                "Info. of daily foods",
+                "Sign in...",
                 style: GoogleFonts.lato(
-                  fontSize: 25,
+                  fontSize: 35,
                   fontWeight: FontWeight.w700,
                   color: Colors.white,
                 ),
               ),
+              // const SizedBox(
+              //   height: 5,
+              // ),
               Container(
                 margin: const EdgeInsets.all(40),
                 height: 375,

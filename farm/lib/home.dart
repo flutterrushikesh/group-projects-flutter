@@ -1,8 +1,11 @@
+import 'package:farm/appbar/info.dart';
+import 'package:farm/appbar/share.dart';
 import 'package:farm/friuts/banana/banana.dart';
 import 'package:farm/friuts/pineapple/pineapple.dart';
 import 'package:farm/vegetable/bhendi/bhendi.dart';
 import 'package:flutter/material.dart';
 import 'package:farm/vegetable/tamato/tamato.dart';
+import 'package:flutter/widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -24,34 +27,39 @@ class _HomePage extends State {
           ),
         ),
         actions: [
-          const Icon(
-            Icons.favorite_border,
-            color: Colors.red,
-          ),
           PopupMenuButton(
             icon: const Icon(
               Icons.more_vert,
               color: Colors.white,
             ),
             itemBuilder: (context) => [
-              PopupMenuItem(
-                child: Row(
-                  children: [
-                    const Icon(Icons.settings),
-                    Container(
-                      margin: const EdgeInsets.only(left: 10),
-                      child: const Text("Setting"),
-                    ),
-                  ],
-                ),
-              ),
+              // PopupMenuItem(
+              //   child: Row(
+              //     children: [
+              //       const Icon(Icons.settings),
+              //       Container(
+              //         margin: const EdgeInsets.only(left: 10),
+              //         child: const Text("Setting"),
+              //       ),
+              //     ],
+              //   ),
+              // ),
               PopupMenuItem(
                 child: Row(
                   children: [
                     const Icon(Icons.share),
-                    Container(
-                      margin: const EdgeInsets.only(left: 10),
-                      child: const Text("Share"),
+                    GestureDetector(
+                      // onTap: () {
+                      //   setState(() {
+                      //     Navigator.of(context).push(
+                      //       MaterialPageRoute(
+                      //         builder: (context) => const Share(),
+                      //       ),
+                      //     );
+                      //   });
+                      // },
+                      // margin: const EdgeInsets.only(left: 10),
+                      child: const Text("   Share"),
                     ),
                   ],
                 ),
@@ -60,9 +68,18 @@ class _HomePage extends State {
                 child: Row(
                   children: [
                     const Icon(Icons.info),
-                    Container(
-                      margin: const EdgeInsets.only(left: 10),
-                      child: const Text("Info"),
+                    GestureDetector(
+                      // onTap: () {
+                      //   setState(() {
+                      //     Navigator.of(context).push(
+                      //       MaterialPageRoute(
+                      //         builder: (context) => const Info(),
+                      //       ),
+                      //     );
+                      //   });
+                      // },
+                      // margin: const EdgeInsets.only(left: 10),
+                      child: const Text("   Info"),
                     ),
                   ],
                 ),
