@@ -1,11 +1,9 @@
-import 'package:farm/appbar/info.dart';
-import 'package:farm/appbar/share.dart';
 import 'package:farm/friuts/banana/banana.dart';
 import 'package:farm/friuts/pineapple/pineapple.dart';
 import 'package:farm/vegetable/bhendi/bhendi.dart';
 import 'package:flutter/material.dart';
 import 'package:farm/vegetable/tamato/tamato.dart';
-import 'package:flutter/widgets.dart';
+// import 'package:flutter/widgets.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

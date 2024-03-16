@@ -1,5 +1,5 @@
 // import 'package:farm/vegetable/tamato/creat.dart';
-import 'package:farm/vegetable/tamato/info1.dart';
+// import 'package:farm/vegetable/tamato/info1.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
