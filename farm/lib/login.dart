@@ -1,5 +1,6 @@
 import 'package:farm/logindatabase.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'home.dart';
 import 'loginmodel.dart';
@@ -40,6 +41,23 @@ class _LoginScreenState extends State {
           ),
         );
       }
+    }
+  }
+
+  bool isShowPass = false;
+  Icon isTogglePass() {
+    if (isShowPass == true) {
+      return const Icon(Icons.visibility);
+    } else {
+      return const Icon(Icons.visibility_off);
+    }
+  }
+
+  bool hideText() {
+    if (isShowPass == true) {
+      return false;
+    } else {
+      return true;
     }
   }
 
@@ -125,26 +143,8 @@ class _LoginScreenState extends State {
                     TextFormField(
                         controller: usernameController,
                         decoration: const InputDecoration(
-                          label: Text("Enter username"),
+                          hintText: "Enter username",
                           prefixIcon: Icon(Icons.person),
-                          enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                            borderSide: BorderSide(
-                              color: Color.fromARGB(255, 6, 124, 145),
-                            ),
-                          ),
-                          focusedBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(
-                                10,
-                              ),
-                            ),
-                            borderSide: BorderSide(
-                              color: Colors.red,
-                            ),
-                          ),
                         ),
                         validator: (value) {
                           if (value == null || value.isEmpty) {
@@ -158,27 +158,19 @@ class _LoginScreenState extends State {
                     ),
                     TextFormField(
                       controller: passwordController,
-                      decoration: const InputDecoration(
-                        label: Text("Enter username"),
-                        prefixIcon: Icon(Icons.lock),
-                        suffixIcon: Icon(Icons.remove_red_eye),
-                        enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(10),
-                          ),
-                          borderSide: BorderSide(
-                              color: Color.fromARGB(255, 6, 124, 145)),
+                      obscureText: hideText(),
+                      obscuringCharacter: "*",
+                      decoration: InputDecoration(
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isShowPass = !isShowPass;
+                            });
+                          },
+                          child: isTogglePass(),
                         ),
-                        focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(
-                              10,
-                            ),
-                          ),
-                          borderSide: BorderSide(
-                            color: Colors.red,
-                          ),
-                        ),
+                        hintText: "Enter password",
+                        prefixIcon: const Icon(Icons.lock),
                       ),
                       textInputAction: TextInputAction.done,
                       validator: (value) {
@@ -281,19 +273,6 @@ class _LoginScreenState extends State {
               // opacity: 0.3,
               fit: BoxFit.fill,
             ),
-            // color: Color.fromARGB(255, 52, 146, 63),
-            // gradient: LinearGradient(
-            //   colors: [
-            //     Color.fromARGB(255, 39, 150, 43),
-            //     Color.fromARGB(255, 137, 221, 157),
-            //   ],
-            //   begin: Alignment.bottomRight,
-            //   end: Alignment.topLeft,
-            // ),
-            // borderRadius: BorderRadius.only(
-            //   bottomLeft: Radius.circular(500),
-            //   // bottomRight: Radius.circular(150),
-            // ),
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -310,7 +289,7 @@ class _LoginScreenState extends State {
                 height: 5,
               ),
               Text(
-                "Info. of dail foods",
+                "Info. of daily foods",
                 style: GoogleFonts.lato(
                   fontSize: 25,
                   fontWeight: FontWeight.w700,
@@ -406,11 +385,18 @@ class _LoginScreenState extends State {
                     TextFormField(
                       controller: passwordController,
                       autofocus: false,
-                      obscureText: true,
+                      obscureText: hideText(),
                       obscuringCharacter: "*",
-                      decoration: const InputDecoration(
-                        prefixIcon: Icon(Icons.lock),
-                        suffixIcon: Icon(Icons.remove_red_eye),
+                      decoration: InputDecoration(
+                        prefixIcon: const Icon(Icons.lock),
+                        suffixIcon: GestureDetector(
+                          onTap: () {
+                            setState(() {
+                              isShowPass = !isShowPass;
+                            });
+                          },
+                          child: isTogglePass(),
+                        ),
                         hintText: "Enter password",
                       ),
                       keyboardType: TextInputType.emailAddress,
