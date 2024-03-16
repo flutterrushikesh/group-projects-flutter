@@ -3,7 +3,6 @@ import 'package:farm/splash.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'logindatabase.dart';
-// import 'loginmodel.dart';
 
 void main() async {
   runApp(const MyApp());
