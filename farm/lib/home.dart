@@ -70,7 +70,7 @@ class _HomePage extends State {
             ],
           )
         ],
-        backgroundColor: const Color.fromARGB(255, 63, 169, 67),
+        backgroundColor: const Color.fromARGB(255, 96, 197, 99),
       ),
       body: Container(
         color: Colors.grey.shade300,
