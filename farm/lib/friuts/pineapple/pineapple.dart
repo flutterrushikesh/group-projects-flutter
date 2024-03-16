@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class PineApple extends StatefulWidget {
   const PineApple({super.key});
@@ -7,6 +8,9 @@ class PineApple extends StatefulWidget {
 }
 
 class _PineApple extends State {
+  TextEditingController custNameController = TextEditingController();
+  TextEditingController quantityController = TextEditingController();
+  TextEditingController addressController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,97 +32,215 @@ class _PineApple extends State {
         ],
         backgroundColor: const Color.fromARGB(255, 245, 221, 101),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        "assets/images/pineapple2.png",
-                      ),
-                      fit: BoxFit.fill,
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      "assets/images/pineapple2.png",
                     ),
-                    boxShadow: [
-                      BoxShadow(
-                          color: Color.fromARGB(255, 179, 176, 176),
-                          offset: Offset(10, 10),
-                          blurRadius: 8),
-                    ],
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    color: Color.fromARGB(255, 223, 228, 122)),
-                alignment: Alignment.center,
-                width: 400,
-                height: 250,
+                    fit: BoxFit.fill,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                        color: Color.fromARGB(255, 179, 176, 176),
+                        offset: Offset(10, 10),
+                        blurRadius: 8),
+                  ],
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20),
+                  ),
+                  color: Color.fromARGB(255, 223, 228, 122)),
+              alignment: Alignment.center,
+              width: 400,
+              height: 250,
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Container(
+              width: 150,
+              decoration: const BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 186, 185, 185),
+                    blurRadius: 5,
+                    offset: Offset(-3, 6),
+                  ),
+                ],
               ),
-              const SizedBox(
-                height: 30,
-              ),
-              Container(
-                decoration: const BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                          color: Color.fromARGB(255, 179, 176, 176),
-                          offset: Offset(10, 10),
-                          blurRadius: 8),
-                    ],
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    color: Color.fromARGB(255, 223, 228, 122)),
-                alignment: Alignment.center,
-                width: 400,
-                height: 520,
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Row(
-                    children: [
-                      Column(
-                        children: [
-                          Text(
-                            "Pineapple Information",
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          Text(
-                            '''  Calories: 16
-  Fat: 0.2g
-  Sodium: 5mg
-  Carbohydrates: 3.5g
-  Fiber: 1.1g
-  Sugars: 2.4g
-  Protein: 0.8g
-  Vitamin C: 12.5mg
-  Vitamin K: 7.2mcg
-  Potassium: 215.7mg
-  Vitamin A: 38.2mcg
-  Folate: 13.7mcg
-  Beta carotene: 408.6mcg
-  Lycopene: 2341.4mcg
-  Vitamin E: 0.5mg
-            ''',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
+              child: ElevatedButton(
+                style: ButtonStyle(
+                  shape: const MaterialStatePropertyAll(
+                    RoundedRectangleBorder(
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10),
                       ),
-                    ],
+                    ),
+                  ),
+                  backgroundColor:
+                      MaterialStatePropertyAll(Colors.blue.shade300),
+                ),
+                onPressed: () {
+                  setState(() {
+                    bottonSheet();
+                  });
+                },
+                child: Text(
+                  'Buy',
+                  style: GoogleFonts.quicksand(
+                    fontWeight: FontWeight.w600,
+                    color: Colors.black,
+                    fontSize: 23,
                   ),
                 ),
               ),
-            ],
-          ),
+            )
+          ],
         ),
       ),
+    );
+  }
+
+  void bottonSheet() {
+    showModalBottomSheet(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(50),
+        ),
+      ),
+      context: context,
+      isScrollControlled: true,
+      builder: (BuildContext context) {
+        return Padding(
+          padding: EdgeInsets.only(
+            top: 20,
+            left: 20,
+            right: 20,
+            bottom: MediaQuery.of(context).viewInsets.bottom,
+          ),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                "Make your order",
+                style: GoogleFonts.inter(
+                  fontSize: 25,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              const SizedBox(height: 30),
+              TextFormField(
+                controller: custNameController,
+                decoration: const InputDecoration(
+                  label: Text("Enter customer name"),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                    borderSide: BorderSide(
+                      color: Color.fromRGBO(48, 11, 211, 1),
+                      width: 1.5,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                    borderSide: BorderSide(
+                      color: Colors.red,
+                      width: 1.5,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 25),
+              TextFormField(
+                controller: quantityController,
+                decoration: const InputDecoration(
+                  label: Text("Enter quantity in KG"),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                    borderSide: BorderSide(
+                      color: Color.fromRGBO(48, 11, 211, 1),
+                      width: 1.5,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                    borderSide: BorderSide(
+                      color: Colors.red,
+                      width: 1.5,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 25),
+              TextFormField(
+                controller: addressController,
+                maxLines: 3,
+                decoration: const InputDecoration(
+                  label: Text("Enter your Address"),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                    borderSide: BorderSide(
+                      color: Color.fromRGBO(48, 11, 211, 1),
+                      width: 1.5,
+                    ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
+                    ),
+                    borderSide: BorderSide(
+                      color: Colors.red,
+                      width: 1.5,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 35),
+              Container(
+                width: 200,
+                height: 50,
+                decoration: const BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 186, 185, 185),
+                      blurRadius: 20,
+                      offset: Offset(-3, 6),
+                    ),
+                  ],
+                ),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.blue.shade300)),
+                  onPressed: () {},
+                  child: Text(
+                    "Buy now",
+                    style: GoogleFonts.quicksand(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 20,
+                      color: Colors.black,
+                    ),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 30)
+            ],
+          ),
+        );
+      },
     );
   }
 }
