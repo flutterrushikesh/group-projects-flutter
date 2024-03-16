@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-// import 'package:farm/splash.dart';
+import 'package:farm/splash.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'logindatabase.dart';
-import 'home.dart';
-// import 'loginmodel.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -31,8 +29,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: HomePage(),
-      // home: SplashScreen(),
+      home: SplashScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
