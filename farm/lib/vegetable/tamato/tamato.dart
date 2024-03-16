@@ -1,5 +1,6 @@
 // import 'package:farm/vegetable/tamato/creat.dart';
 // import 'package:farm/vegetable/tamato/info1.dart';
+import 'package:farm/vegetable/tamato/info1.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -70,43 +71,90 @@ class _Tamato extends State {
               const SizedBox(
                 height: 30,
               ),
-              Container(
-                width: 150,
-                decoration: const BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color.fromARGB(255, 186, 185, 185),
-                      blurRadius: 5,
-                      offset: Offset(-3, 6),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    width: 150,
+                    decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(255, 186, 185, 185),
+                          blurRadius: 8,
+                          offset: Offset(5, 5),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-                child: ElevatedButton(
-                  style: ButtonStyle(
-                    shape: const MaterialStatePropertyAll(
-                      RoundedRectangleBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        shape: const MaterialStatePropertyAll(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ),
+                          ),
+                        ),
+                        backgroundColor:
+                            MaterialStatePropertyAll(Colors.blue.shade300),
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Info1(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Text(
+                        'Info',
+                        style: GoogleFonts.quicksand(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                          fontSize: 23,
                         ),
                       ),
                     ),
-                    backgroundColor:
-                        MaterialStatePropertyAll(Colors.blue.shade300),
                   ),
-                  onPressed: () {
-                    setState(() {
-                      bottonSheet();
-                    });
-                  },
-                  child: Text(
-                    'Buy',
-                    style: GoogleFonts.quicksand(
-                      fontWeight: FontWeight.w600,
-                      color: Colors.black,
-                      fontSize: 23,
+                  Container(
+                    width: 150,
+                    decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(255, 186, 185, 185),
+                          blurRadius: 8,
+                          offset: Offset(5, 5),
+                        ),
+                      ],
+                    ),
+                    child: ElevatedButton(
+                      style: ButtonStyle(
+                        shape: const MaterialStatePropertyAll(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(10),
+                            ),
+                          ),
+                        ),
+                        backgroundColor:
+                            MaterialStatePropertyAll(Colors.blue.shade300),
+                      ),
+                      onPressed: () {
+                        setState(() {
+                          bottonSheet();
+                        });
+                      },
+                      child: Text(
+                        'Buy',
+                        style: GoogleFonts.quicksand(
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                          fontSize: 23,
+                        ),
+                      ),
                     ),
                   ),
-                ),
+                ],
               )
             ],
           ),
