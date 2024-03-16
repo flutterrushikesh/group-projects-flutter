@@ -42,26 +42,25 @@ class _Tamato extends State {
             children: [
               Container(
                 decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      "assets/images/tamato2.png",
+                    image: DecorationImage(
+                      image: AssetImage(
+                        "assets/images/tamato2.png",
+                      ),
+                      // opacity: 0.9,
+                      // opacity: 0.3,
+                      fit: BoxFit.fill,
                     ),
-                    // opacity: 0.9,
-                    // opacity: 0.3,
-                    fit: BoxFit.fill,
-                  ),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color.fromARGB(255, 179, 176, 176),
-                      offset: Offset(10, 10),
-                      blurRadius: 8,
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(255, 179, 176, 176),
+                        offset: Offset(10, 10),
+                        blurRadius: 8,
+                      ),
+                    ],
+                    borderRadius: BorderRadius.all(
+                      Radius.circular(20),
                     ),
-                  ],
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20),
-                  ),
-                  color: Color.fromARGB(255, 228, 163, 122),
-                ),
+                    color: Color.fromARGB(255, 228, 163, 122)),
                 alignment: Alignment.center,
                 width: 400,
                 height: 200,
@@ -71,93 +70,43 @@ class _Tamato extends State {
               const SizedBox(
                 height: 30,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    width: 150,
-                    decoration: const BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromARGB(255, 186, 185, 185),
-                          blurRadius: 8,
-                          offset: Offset(5, 5),
-                        ),
-                      ],
+              Container(
+                width: 150,
+                decoration: const BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 186, 185, 185),
+                      blurRadius: 5,
+                      offset: Offset(-3, 6),
                     ),
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        shape: const MaterialStatePropertyAll(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                          ),
-                        ),
-                        backgroundColor:
-                            MaterialStatePropertyAll(Colors.blue.shade300),
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const Info1(),
-                            ),
-                          );
-                        });
-                      },
-                      child: Text(
-                        'Info',
-                        style: GoogleFonts.quicksand(
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                          fontSize: 23,
+                  ],
+                ),
+                child: ElevatedButton(
+                  style: ButtonStyle(
+                    shape: const MaterialStatePropertyAll(
+                      RoundedRectangleBorder(
+                        borderRadius: BorderRadius.all(
+                          Radius.circular(10),
                         ),
                       ),
+                    ),
+                    backgroundColor:
+                        MaterialStatePropertyAll(Colors.blue.shade300),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      bottonSheet();
+                    });
+                  },
+                  child: Text(
+                    'Buy',
+                    style: GoogleFonts.quicksand(
+                      fontWeight: FontWeight.w600,
+                      color: Colors.black,
+                      fontSize: 23,
                     ),
                   ),
-                  // SizedBox(
-                  //   width: 2,
-                  // ),
-                  Container(
-                    width: 150,
-                    decoration: const BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromARGB(255, 186, 185, 185),
-                          blurRadius: 8,
-                          offset: Offset(5, 5),
-                        ),
-                      ],
-                    ),
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        shape: const MaterialStatePropertyAll(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                          ),
-                        ),
-                        backgroundColor:
-                            MaterialStatePropertyAll(Colors.blue.shade300),
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          bottonSheet();
-                        });
-                      },
-                      child: Text(
-                        'Buy',
-                        style: GoogleFonts.quicksand(
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                          fontSize: 23,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
+                ),
               )
             ],
           ),
@@ -297,7 +246,9 @@ class _Tamato extends State {
                   ),
                 ),
               ),
-              const SizedBox(height: 30)
+              const SizedBox(
+                height: 30,
+              )
             ],
           ),
         );

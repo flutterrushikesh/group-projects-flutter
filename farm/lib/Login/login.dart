@@ -1,8 +1,8 @@
-import 'package:farm/logindatabase.dart';
+import 'package:farm/Login/logindatabase.dart';
 import 'package:flutter/material.dart';
 // import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'home.dart';
+import '../home.dart';
 import 'loginmodel.dart';
 
 class LoginScreen extends StatefulWidget {

@@ -1,4 +1,4 @@
-import 'package:farm/loginmodel.dart';
+import 'package:farm/Login/loginmodel.dart';
 import 'package:sqflite/sqflite.dart';
 
 dynamic database;
