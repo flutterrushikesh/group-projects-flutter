@@ -1,3 +1,4 @@
+import 'package:farm/vegetable/tamato/creat.dart';
 import 'package:flutter/material.dart';
 
 class Tamato extends StatefulWidget {
@@ -46,9 +47,10 @@ class _Tamato extends State {
                     ),
                     boxShadow: [
                       BoxShadow(
-                          color: Color.fromARGB(255, 179, 176, 176),
-                          offset: Offset(10, 10),
-                          blurRadius: 8),
+                        color: Color.fromARGB(255, 179, 176, 176),
+                        offset: Offset(10, 10),
+                        blurRadius: 8,
+                      ),
                     ],
                     borderRadius: BorderRadius.all(
                       Radius.circular(20),
@@ -56,66 +58,51 @@ class _Tamato extends State {
                     color: Color.fromARGB(255, 228, 163, 122)),
                 alignment: Alignment.center,
                 width: 400,
-                height: 250,
+                height: 200,
 
                 // padding: const EdgeInsets.all(8),
               ),
               const SizedBox(
                 height: 30,
               ),
-              Container(
-                decoration: const BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                          color: Color.fromARGB(255, 179, 176, 176),
-                          offset: Offset(10, 10),
-                          blurRadius: 8),
-                    ],
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    color: Color.fromARGB(255, 228, 163, 122)),
-                alignment: Alignment.center,
-                width: 400,
-                height: 520,
-                child: Container(
-                  padding: const EdgeInsets.all(8),
-                  child: const Row(
-                    children: [
-                      Column(
-                        children: [
-                          Text(
-                            "Tamato Information",
-                            style: TextStyle(
-                              fontSize: 25,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                          Text(
-                            '''  Calories: 16
-  Fat: 0.2g
-  Sodium: 5mg
-  Carbohydrates: 3.5g
-  Fiber: 1.1g
-  Sugars: 2.4g
-  Protein: 0.8g
-  Vitamin C: 12.5mg
-  Vitamin K: 7.2mcg
-  Potassium: 215.7mg
-  Vitamin A: 38.2mcg
-  Folate: 13.7mcg
-  Beta carotene: 408.6mcg
-  Lycopene: 2341.4mcg
-  Vitamin E: 0.5mg
-            ''',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => const TamatoDemo(),
                       ),
-                    ],
+                    );
+                  });
+                },
+                child: Center(
+                  child: Container(
+                    height: 50,
+                    width: 200,
+                    decoration: const BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                          color: Color.fromARGB(255, 126, 126, 126),
+                          blurRadius: 8,
+                          blurStyle: BlurStyle.normal,
+                          offset: Offset(10, 10),
+                        ),
+                      ],
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(5),
+                      ),
+                      color: Colors.blue,
+                    ),
+                    child: const Center(
+                      child: Text(
+                        "Buy",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 30,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ),
                   ),
                 ),
               ),
