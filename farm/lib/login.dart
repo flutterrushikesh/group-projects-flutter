@@ -1,6 +1,6 @@
 import 'package:farm/logindatabase.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+// import 'package:flutter/widgets.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'home.dart';
 import 'loginmodel.dart';
@@ -20,7 +20,7 @@ class _LoginScreenState extends State {
   bool isLogin = false;
 
   void loginSuccess(List obj) {
-    print(obj);
+    // print(obj);
     for (int i = 0; i < obj.length; i++) {
       if (obj[i].username == usernameController.text &&
           obj[i].password == passwordController.text) {
@@ -203,7 +203,7 @@ class _LoginScreenState extends State {
                           child: ElevatedButton(
                             onPressed: () async {
                               List userData = await retData();
-                              print(userData);
+                              // print(userData);
                               setState(() {
                                 loginSuccess(userData);
                                 clearControllers();

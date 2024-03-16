@@ -82,14 +82,43 @@ class _HomePage extends State {
               const SizedBox(
                 height: 15,
               ),
-              // First Row Vegetables
-              const Text(
-                "Vegetable's",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
+              Row(
+                children: [
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  Center(
+                    child: Container(
+                      width: 150,
+                      height: 45,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.blue.shade200,
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 5,
+                              color: Colors.grey.shade500,
+                              blurStyle: BlurStyle.normal,
+                              offset: const Offset(5, 5),
+                            )
+                          ]),
+                      child: TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "Vegetable's",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
               ),
+              const SizedBox(height: 5),
+              // First Row Vegetables
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.all(15),
@@ -289,13 +318,44 @@ class _HomePage extends State {
                 ),
               ),
               // Fruits 2nd Row
-              const Text(
-                "Fruits",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
+              const SizedBox(height: 5),
+              Row(
+                children: [
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  Center(
+                    child: Container(
+                      width: 150,
+                      height: 45,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.blue.shade200,
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 5,
+                              color: Colors.grey.shade500,
+                              blurStyle: BlurStyle.normal,
+                              offset: const Offset(5, 5),
+                            )
+                          ]),
+                      child: TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "Fruits",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // First Row Vegetables
+                ],
               ),
+              const SizedBox(height: 5),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.all(15),
@@ -464,13 +524,44 @@ class _HomePage extends State {
                 ),
               ),
               // Daily Foods 3rd Row
-              const Text(
-                "Daily Foods",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
+              const SizedBox(height: 5),
+              Row(
+                children: [
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  Center(
+                    child: Container(
+                      width: 170,
+                      height: 45,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.blue.shade200,
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 5,
+                              color: Colors.grey.shade500,
+                              blurStyle: BlurStyle.normal,
+                              offset: const Offset(5, 5),
+                            )
+                          ]),
+                      child: TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "Dairy Products",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // First Row Vegetables
+                ],
               ),
+              const SizedBox(height: 5),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.all(15),
@@ -617,13 +708,44 @@ class _HomePage extends State {
                 ),
               ),
               // Daily Foods 4 Row
-              const Text(
-                "Daily Foods",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
+              const SizedBox(height: 5),
+              Row(
+                children: [
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  Center(
+                    child: Container(
+                      width: 150,
+                      height: 45,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.blue.shade200,
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 5,
+                              color: Colors.grey.shade500,
+                              blurStyle: BlurStyle.normal,
+                              offset: const Offset(5, 5),
+                            )
+                          ]),
+                      child: TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "Daily Foods",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // First Row Vegetables
+                ],
               ),
+              const SizedBox(height: 5),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.all(15),
@@ -770,13 +892,44 @@ class _HomePage extends State {
                 ),
               ),
               // Daily Foods 5th Row
-              const Text(
-                "Daily Foods",
-                style: TextStyle(
-                  fontSize: 20,
-                  fontWeight: FontWeight.w700,
-                ),
+              const SizedBox(height: 5),
+              Row(
+                children: [
+                  const SizedBox(
+                    width: 15,
+                  ),
+                  Center(
+                    child: Container(
+                      width: 150,
+                      height: 45,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Colors.blue.shade200,
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 5,
+                              color: Colors.grey.shade500,
+                              blurStyle: BlurStyle.normal,
+                              offset: const Offset(5, 5),
+                            )
+                          ]),
+                      child: TextButton(
+                        onPressed: () {},
+                        child: const Text(
+                          "Pulses",
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black,
+                            fontWeight: FontWeight.w500,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                  // First Row Vegetables
+                ],
               ),
+              const SizedBox(height: 5),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.all(15),
