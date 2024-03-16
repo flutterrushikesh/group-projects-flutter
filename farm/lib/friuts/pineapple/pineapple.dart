@@ -236,7 +236,9 @@ class _PineApple extends State {
                   ),
                 ),
               ),
-              const SizedBox(height: 30)
+              const SizedBox(
+                height: 30,
+              )
             ],
           ),
         );
