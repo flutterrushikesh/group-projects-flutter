@@ -1,5 +1,7 @@
 // import 'package:farm/vegetable/tamato/creat.dart';
 // import 'package:farm/vegetable/tamato/info1.dart';
+import 'dart:developer';
+
 import 'package:farm/vegetable/tamato/info1.dart';
 import 'package:flutter/material.dart';
 import 'package:farm/loginmodel.dart';
@@ -16,6 +18,19 @@ class _Tamato extends State {
   TextEditingController custNameController = TextEditingController();
   TextEditingController quantityController = TextEditingController();
   TextEditingController addressController = TextEditingController();
+
+  List tomatoOrderList = [];
+
+  @override
+  void initState() {
+    log("In init state");
+    super.initState();
+    Future.delayed(Duration.zero, () async {
+      List retTomatoList = await retTomatoData();
+      tomatoOrderList = retTomatoList;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,128 +52,181 @@ class _Tamato extends State {
         ],
         backgroundColor: Colors.red,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: [
-              Container(
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        "assets/images/tamato2.png",
-                      ),
-                      // opacity: 0.9,
-                      // opacity: 0.3,
-                      fit: BoxFit.fill,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color.fromARGB(255, 179, 176, 176),
-                        offset: Offset(10, 10),
-                        blurRadius: 8,
-                      ),
-                    ],
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    color: Color.fromARGB(255, 228, 163, 122)),
-                alignment: Alignment.center,
-                width: 400,
-                height: 200,
-
-                // padding: const EdgeInsets.all(8),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    width: 150,
-                    decoration: const BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromARGB(255, 186, 185, 185),
-                          blurRadius: 8,
-                          offset: Offset(5, 5),
-                        ),
-                      ],
-                    ),
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        shape: const MaterialStatePropertyAll(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                          ),
-                        ),
-                        backgroundColor:
-                            MaterialStatePropertyAll(Colors.blue.shade300),
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const Info1(),
-                            ),
-                          );
-                        });
-                      },
-                      child: Text(
-                        'Info',
-                        style: GoogleFonts.quicksand(
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                          fontSize: 23,
-                        ),
-                      ),
-                    ),
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(
+                    "assets/images/tamato2.png",
                   ),
-                  Container(
-                    width: 150,
-                    decoration: const BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromARGB(255, 186, 185, 185),
-                          blurRadius: 8,
-                          offset: Offset(5, 5),
-                        ),
-                      ],
-                    ),
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        shape: const MaterialStatePropertyAll(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
-                          ),
-                        ),
-                        backgroundColor:
-                            MaterialStatePropertyAll(Colors.blue.shade300),
-                      ),
-                      onPressed: () {
-                        setState(() {
-                          bottonSheet();
-                        });
-                      },
-                      child: Text(
-                        'Buy',
-                        style: GoogleFonts.quicksand(
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                          fontSize: 23,
-                        ),
-                      ),
-                    ),
+                  // opacity: 0.9,
+                  // opacity: 0.3,
+                  fit: BoxFit.fill,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(255, 179, 176, 176),
+                    offset: Offset(10, 10),
+                    blurRadius: 8,
                   ),
                 ],
-              )
-            ],
-          ),
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
+                ),
+                color: Color.fromARGB(255, 228, 163, 122),
+              ),
+              alignment: Alignment.center,
+              width: 400,
+              height: 200,
+
+              // padding: const EdgeInsets.all(8),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  width: 150,
+                  decoration: const BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(255, 186, 185, 185),
+                        blurRadius: 8,
+                        offset: Offset(5, 5),
+                      ),
+                    ],
+                  ),
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      shape: const MaterialStatePropertyAll(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                        ),
+                      ),
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.blue.shade300),
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const Info1(),
+                          ),
+                        );
+                      });
+                    },
+                    child: Text(
+                      'Info',
+                      style: GoogleFonts.quicksand(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                        fontSize: 23,
+                      ),
+                    ),
+                  ),
+                ),
+                Container(
+                  width: 150,
+                  decoration: const BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(255, 186, 185, 185),
+                        blurRadius: 8,
+                        offset: Offset(5, 5),
+                      ),
+                    ],
+                  ),
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      shape: const MaterialStatePropertyAll(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                        ),
+                      ),
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.blue.shade300),
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        bottonSheet();
+                      });
+                    },
+                    child: Text(
+                      'Buy',
+                      style: GoogleFonts.quicksand(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                        fontSize: 23,
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: tomatoOrderList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        margin: const EdgeInsets.all(15),
+                        padding: const EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Color.fromARGB(255, 186, 185, 185),
+                                blurRadius: 8,
+                                offset: Offset(5, 5),
+                              ),
+                            ]),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // Text(
+                            //   tomatoOrderList[index].orderId,
+                            // ),
+                            Text(
+                              tomatoOrderList[index].name,
+                              style: GoogleFonts.jost(
+                                fontSize: 20,
+                              ),
+                            ),
+                            Text(
+                              "${tomatoOrderList[index].quantity} kg",
+                              style: GoogleFonts.jost(
+                                fontSize: 20,
+                              ),
+                            ),
+                            Text(
+                              tomatoOrderList[index].address,
+                              style: GoogleFonts.jost(
+                                fontSize: 20,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            )
+          ],
         ),
       ),
     );
@@ -219,6 +287,7 @@ class _Tamato extends State {
               const SizedBox(height: 25),
               TextFormField(
                 controller: quantityController,
+                keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
                   label: Text("Enter quantity in KG"),
                   enabledBorder: OutlineInputBorder(
@@ -284,12 +353,10 @@ class _Tamato extends State {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.blue.shade300)),
-                  onPressed: () {
-                    Tomato tomatoObj = Tomato(
-                        name: custNameController.text,
-                        quantity: quantityController.text,
-                        address: addressController.text);
-                    insertTomatoData(tomatoObj);
+                  onPressed: () async {
+                    submitData();
+                    List retTomatoList = await retTomatoData();
+                    tomatoOrderList = retTomatoList;
                   },
                   child: Text(
                     "Buy now",
@@ -309,5 +376,25 @@ class _Tamato extends State {
         );
       },
     );
+  }
+
+  void submitData() {
+    if (custNameController.text.trim().isNotEmpty &&
+        quantityController.text.trim().isNotEmpty &&
+        addressController.text.trim().isNotEmpty) {
+      Tomato tomatoObj = Tomato(
+          name: custNameController.text,
+          quantity: quantityController.text,
+          address: addressController.text);
+      insertTomatoData(tomatoObj);
+    }
+    Navigator.of(context).pop();
+    clearControllers();
+  }
+
+  void clearControllers() {
+    custNameController.clear();
+    quantityController.clear();
+    addressController.clear();
   }
 }
