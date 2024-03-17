@@ -1,6 +1,7 @@
 import 'package:farm/friuts/banana/banana.dart';
 import 'package:farm/friuts/pineapple/pineapple.dart';
 import 'package:farm/vegetable/bhendi/bhendi.dart';
+import 'package:farm/vegetable/flowers/flower.dart';
 import 'package:flutter/material.dart';
 import 'package:farm/vegetable/tamato/tamato.dart';
 // import 'package:flutter/widgets.dart';
@@ -237,36 +238,46 @@ class _HomePage extends State {
                           const SizedBox(
                             width: 20,
                           ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 150,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/images/flower.png",
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => const Flower(),
+                                  ),
+                                );
+                              });
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(10),
+                              height: 200,
+                              width: 150,
+                              // color: Colors.grey,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    "assets/images/flower.png",
+                                  ),
+                                  // opacity: 0.3,
+                                  fit: BoxFit.fill,
                                 ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
+                                color: Colors.grey,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Color.fromARGB(255, 187, 184, 184),
+                                      offset: Offset(10, 10),
+                                      blurRadius: 8),
+                                ],
                               ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
-                              ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
-                            ),
-                            child: const Text(
-                              "Cauliflower  ",
-                              style: TextStyle(
-                                backgroundColor: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.w500,
+                              child: const Text(
+                                "Flower",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ),
                           ),
@@ -454,29 +465,40 @@ class _HomePage extends State {
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/fruits/bit.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/fruits/bit.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                     const SizedBox(
@@ -573,150 +595,205 @@ class _HomePage extends State {
                       ),
                     ),
                   ),
-                  // First Row Vegetables
                 ],
               ),
+              // 3rd Row Vegetables
               const SizedBox(height: 5),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.all(15),
                 child: Row(
                   children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/pulses/pulses.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/dairy/milk.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/pulses/rice.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/dairy/curd.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/fruits/bit.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/dairy/panner.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/fruits/mango.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/dairy/ice.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/fruits/stwabbery.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/dairy/cheese.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                   ],
@@ -766,141 +843,157 @@ class _HomePage extends State {
                 padding: const EdgeInsets.all(15),
                 child: Row(
                   children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/pulses/pulses.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/foods/rice.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/pulses/rice.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/foods/aata.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/fruits/bit.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/foods/poha.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/fruits/mango.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/foods/rava.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
-                        ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/fruits/stwabbery.png",
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                   ],
@@ -950,141 +1043,196 @@ class _HomePage extends State {
                 padding: const EdgeInsets.all(15),
                 child: Row(
                   children: [
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/pulses/pulses.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/pulses/mug.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/pulses/rice.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/pulses/tur.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/fruits/bit.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/foods/rava.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/fruits/mango.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/foods/rava.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                     const SizedBox(
                       width: 20,
                     ),
-                    Container(
-                      padding: const EdgeInsets.all(10),
-                      height: 200,
-                      width: 150,
-                      // color: Colors.grey,
-                      decoration: const BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                            "assets/fruits/stwabbery.png",
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/foods/rava.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
                           ),
-                          // opacity: 0.3,
-                          fit: BoxFit.fill,
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
                         ),
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(15),
-                        ),
-                        boxShadow: [
-                          BoxShadow(
-                              color: Color.fromARGB(255, 187, 184, 184),
-                              offset: Offset(10, 10),
-                              blurRadius: 8),
-                        ],
                       ),
                     ),
                   ],

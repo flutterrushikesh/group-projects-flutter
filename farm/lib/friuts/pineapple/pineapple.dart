@@ -1,3 +1,4 @@
+import 'package:farm/friuts/pineapple/info3.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -30,7 +31,7 @@ class _PineApple extends State {
             color: Colors.white,
           ),
         ],
-        backgroundColor: const Color.fromARGB(255, 245, 221, 101),
+        backgroundColor: const Color.fromARGB(255, 223, 228, 122),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -38,66 +39,114 @@ class _PineApple extends State {
           children: [
             Container(
               decoration: const BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(
-                      "assets/images/pineapple2.png",
-                    ),
-                    fit: BoxFit.fill,
+                image: DecorationImage(
+                  image: AssetImage(
+                    "assets/images/pineapple2.png",
                   ),
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color.fromARGB(255, 179, 176, 176),
-                        offset: Offset(10, 10),
-                        blurRadius: 8),
-                  ],
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20),
-                  ),
-                  color: Color.fromARGB(255, 223, 228, 122)),
+                  fit: BoxFit.fill,
+                ),
+                boxShadow: [
+                  BoxShadow(
+                      color: Color.fromARGB(255, 179, 176, 176),
+                      offset: Offset(10, 10),
+                      blurRadius: 8),
+                ],
+                borderRadius: BorderRadius.all(
+                  Radius.circular(20),
+                ),
+                color: Color.fromARGB(255, 223, 228, 122),
+              ),
               alignment: Alignment.center,
               width: 400,
-              height: 250,
+              height: 200,
             ),
             const SizedBox(
               height: 30,
             ),
-            Container(
-              width: 150,
-              decoration: const BoxDecoration(
-                boxShadow: [
-                  BoxShadow(
-                    color: Color.fromARGB(255, 186, 185, 185),
-                    blurRadius: 5,
-                    offset: Offset(-3, 6),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  width: 150,
+                  decoration: const BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(255, 186, 185, 185),
+                        blurRadius: 8,
+                        offset: Offset(5, 5),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  shape: const MaterialStatePropertyAll(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(10),
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      shape: const MaterialStatePropertyAll(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                        ),
+                      ),
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.blue.shade300),
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const Info3(),
+                          ),
+                        );
+                      });
+                    },
+                    child: Text(
+                      'Info',
+                      style: GoogleFonts.quicksand(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                        fontSize: 23,
                       ),
                     ),
                   ),
-                  backgroundColor:
-                      MaterialStatePropertyAll(Colors.blue.shade300),
                 ),
-                onPressed: () {
-                  setState(() {
-                    bottonSheet();
-                  });
-                },
-                child: Text(
-                  'Buy',
-                  style: GoogleFonts.quicksand(
-                    fontWeight: FontWeight.w600,
-                    color: Colors.black,
-                    fontSize: 23,
+                Container(
+                  width: 150,
+                  decoration: const BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(255, 186, 185, 185),
+                        blurRadius: 8,
+                        offset: Offset(5, 5),
+                      ),
+                    ],
+                  ),
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      shape: const MaterialStatePropertyAll(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
+                          ),
+                        ),
+                      ),
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.blue.shade300),
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        bottonSheet();
+                      });
+                    },
+                    child: Text(
+                      'Buy',
+                      style: GoogleFonts.quicksand(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                        fontSize: 23,
+                      ),
+                    ),
                   ),
                 ),
-              ),
+              ],
             )
           ],
         ),

@@ -28,6 +28,9 @@ flutter:
   assets:
     - assets/images/
     - assets/fruits/
-    - assets/pulses/
     - assets/
+    - assets/foods/
+    - assets/dairy/
+    - assets/login/
+    - assets/pulses/
     # - assets/fruits/
