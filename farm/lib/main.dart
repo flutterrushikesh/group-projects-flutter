@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:farm/splash.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'Login/logindatabase.dart';
+import 'logindatabase.dart';
 
 void main() async {
   runApp(const MyApp());
@@ -17,10 +17,15 @@ void main() async {
         username TEXT,
         password TEXT
       )''');
+      await db.execute('''CREATE TABLE Tomato(
+        orderId INTGER PRIMARY KEY,
+        name TEXT,
+        quantity TEXT ,
+        address TEXT,
+      )''');
     },
   );
-  // print("Print data");
-  // print(await retData());
+  // print(await);
 }
 
 // print(await retData());
