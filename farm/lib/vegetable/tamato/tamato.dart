@@ -2,7 +2,8 @@
 // import 'package:farm/vegetable/tamato/info1.dart';
 import 'package:farm/vegetable/tamato/info1.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/widgets.dart';
+import 'package:farm/loginmodel.dart';
+import 'package:farm/logindatabase.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class Tamato extends StatefulWidget {
@@ -283,7 +284,13 @@ class _Tamato extends State {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.blue.shade300)),
-                  onPressed: () {},
+                  onPressed: () {
+                    Tomato tomatoObj = Tomato(
+                        name: custNameController.text,
+                        quantity: quantityController.text,
+                        address: addressController.text);
+                    insertTomatoData(tomatoObj);
+                  },
                   child: Text(
                     "Buy now",
                     style: GoogleFonts.quicksand(
