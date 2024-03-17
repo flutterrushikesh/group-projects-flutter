@@ -159,12 +159,12 @@ class _HomePage extends State {
                             child: Container(
                               padding: const EdgeInsets.all(10),
                               height: 200,
-                              width: 150,
+                              width: 175,
                               // color: Colors.grey,
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
                                   image: AssetImage(
-                                    "assets/images/image3.png",
+                                    "assets/images/tamato.png",
                                   ),
                                   // opacity: 0.3,
                                   fit: BoxFit.fill,
@@ -175,9 +175,10 @@ class _HomePage extends State {
                                 ),
                                 boxShadow: [
                                   BoxShadow(
-                                      color: Color.fromARGB(255, 179, 176, 176),
-                                      offset: Offset(10, 10),
-                                      blurRadius: 8),
+                                    color: Color.fromARGB(255, 179, 176, 176),
+                                    offset: Offset(10, 10),
+                                    blurRadius: 8,
+                                  ),
                                 ],
                               ),
                               child: const Text(
@@ -205,7 +206,7 @@ class _HomePage extends State {
                             child: Container(
                               padding: const EdgeInsets.all(10),
                               height: 200,
-                              width: 150,
+                              width: 175,
                               // color: Colors.grey,
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
@@ -251,7 +252,7 @@ class _HomePage extends State {
                             child: Container(
                               padding: const EdgeInsets.all(10),
                               height: 200,
-                              width: 150,
+                              width: 175,
                               // color: Colors.grey,
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
@@ -287,7 +288,7 @@ class _HomePage extends State {
                           Container(
                             padding: const EdgeInsets.all(10),
                             height: 200,
-                            width: 150,
+                            width: 175,
                             // color: Colors.grey,
                             decoration: const BoxDecoration(
                               image: DecorationImage(
@@ -315,7 +316,7 @@ class _HomePage extends State {
                           Container(
                             padding: const EdgeInsets.all(10),
                             height: 200,
-                            width: 150,
+                            width: 175,
                             // color: Colors.grey,
                             decoration: const BoxDecoration(
                               image: DecorationImage(
@@ -400,7 +401,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -439,7 +440,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -478,12 +479,12 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
-                              "assets/fruits/bit.png",
+                              "assets/fruits/greph.png",
                             ),
                             // opacity: 0.3,
                             fit: BoxFit.fill,
@@ -507,7 +508,7 @@ class _HomePage extends State {
                     Container(
                       padding: const EdgeInsets.all(10),
                       height: 200,
-                      width: 150,
+                      width: 160,
                       // color: Colors.grey,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
@@ -535,12 +536,12 @@ class _HomePage extends State {
                     Container(
                       padding: const EdgeInsets.all(10),
                       height: 200,
-                      width: 150,
+                      width: 160,
                       // color: Colors.grey,
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           image: AssetImage(
-                            "assets/fruits/stwabbery.png",
+                            "assets/fruits/stwa.png",
                           ),
                           // opacity: 0.3,
                           fit: BoxFit.fill,
@@ -617,7 +618,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -656,7 +657,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -695,7 +696,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -734,7 +735,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -773,7 +774,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -846,11 +847,11 @@ class _HomePage extends State {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const Banana(),
-                            ),
-                          );
+                          // Navigator.of(context).push(
+                          //   MaterialPageRoute(
+                          //     builder: (context) => const Rice1(),
+                          //   ),
+                          // );
                         });
                       },
                       child: Container(
@@ -885,11 +886,11 @@ class _HomePage extends State {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const Banana(),
-                            ),
-                          );
+                          // Navigator.of(context).push(
+                          //   MaterialPageRoute(
+                          //     builder: (context) => const Rice1(),
+                          //   ),
+                          // );
                         });
                       },
                       child: Container(
@@ -1100,85 +1101,85 @@ class _HomePage extends State {
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
+                              "assets/pulses/chana.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
+                          ),
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                              "assets/pulses/masoor.png",
+                            ),
+                            // opacity: 0.3,
+                            fit: BoxFit.fill,
+                          ),
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(15),
+                          ),
+                          boxShadow: [
+                            BoxShadow(
+                                color: Color.fromARGB(255, 187, 184, 184),
+                                offset: Offset(10, 10),
+                                blurRadius: 8),
+                          ],
+                        ),
+                      ),
+                    ),
+                    const SizedBox(
+                      width: 20,
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Banana(),
+                            ),
+                          );
+                        });
+                      },
+                      child: Container(
+                        padding: const EdgeInsets.all(10),
+                        height: 200,
+                        width: 150,
+                        // color: Colors.grey,
+                        decoration: const BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
                               "assets/pulses/tur.png",
-                            ),
-                            // opacity: 0.3,
-                            fit: BoxFit.fill,
-                          ),
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(15),
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Color.fromARGB(255, 187, 184, 184),
-                                offset: Offset(10, 10),
-                                blurRadius: 8),
-                          ],
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const Banana(),
-                            ),
-                          );
-                        });
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.all(10),
-                        height: 200,
-                        width: 150,
-                        // color: Colors.grey,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(
-                              "assets/foods/rava.png",
-                            ),
-                            // opacity: 0.3,
-                            fit: BoxFit.fill,
-                          ),
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.all(
-                            Radius.circular(15),
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                                color: Color.fromARGB(255, 187, 184, 184),
-                                offset: Offset(10, 10),
-                                blurRadius: 8),
-                          ],
-                        ),
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 20,
-                    ),
-                    GestureDetector(
-                      onTap: () {
-                        setState(() {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const Banana(),
-                            ),
-                          );
-                        });
-                      },
-                      child: Container(
-                        padding: const EdgeInsets.all(10),
-                        height: 200,
-                        width: 150,
-                        // color: Colors.grey,
-                        decoration: const BoxDecoration(
-                          image: DecorationImage(
-                            image: AssetImage(
-                              "assets/foods/rava.png",
                             ),
                             // opacity: 0.3,
                             fit: BoxFit.fill,
