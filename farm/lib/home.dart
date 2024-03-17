@@ -847,11 +847,11 @@ class _HomePage extends State {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const Banana(),
-                            ),
-                          );
+                          // Navigator.of(context).push(
+                          //   MaterialPageRoute(
+                          //     builder: (context) => const Rice1(),
+                          //   ),
+                          // );
                         });
                       },
                       child: Container(
@@ -886,11 +886,11 @@ class _HomePage extends State {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const Banana(),
-                            ),
-                          );
+                          // Navigator.of(context).push(
+                          //   MaterialPageRoute(
+                          //     builder: (context) => const Rice1(),
+                          //   ),
+                          // );
                         });
                       },
                       child: Container(
