@@ -232,7 +232,7 @@ class _Tamato extends State {
                   );
                 },
               ),
-            )
+            ),
           ],
         ),
       ),
