@@ -15,7 +15,7 @@ class _Info1 extends State {
           "Tamato",
           style: TextStyle(
             color: Colors.black,
-            fontSize: 22,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -79,7 +79,7 @@ class _Info1 extends State {
   ''',
                           style: TextStyle(
                             fontSize: 20,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w300,
                           ),
                         ),
                       ],

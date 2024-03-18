@@ -42,7 +42,7 @@ class _Tamato extends State {
         title: const Text(
           "Tamato",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontSize: 30,
             fontWeight: FontWeight.bold,
           ),

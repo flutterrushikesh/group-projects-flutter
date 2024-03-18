@@ -20,7 +20,7 @@ class _Flower extends State {
         title: const Text(
           "Flower",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
