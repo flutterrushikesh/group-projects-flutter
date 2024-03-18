@@ -26,6 +26,8 @@ class _PineApple extends State {
     Future.delayed(Duration.zero, () async {
       List retPinList = await retPinData();
       pinOrederList = retPinList;
+
+      setState(() {});
     });
   }
 

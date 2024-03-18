@@ -25,6 +25,8 @@ class _Ladyfinger extends State {
     Future.delayed(Duration.zero, () async {
       List retladyList = await retLadyData();
       ladyOrderList = retladyList;
+
+      setState(() {});
     });
   }
 
