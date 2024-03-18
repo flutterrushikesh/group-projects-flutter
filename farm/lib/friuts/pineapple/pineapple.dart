@@ -1,4 +1,8 @@
+import 'dart:developer';
+
 import 'package:farm/friuts/pineapple/info3.dart';
+import 'package:farm/logindatabase.dart';
+import 'package:farm/loginmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -12,6 +16,19 @@ class _PineApple extends State {
   TextEditingController custNameController = TextEditingController();
   TextEditingController quantityController = TextEditingController();
   TextEditingController addressController = TextEditingController();
+
+  List pinOrederList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    log("Init state");
+    Future.delayed(Duration.zero, () async {
+      List retPinList = await retPinData();
+      pinOrederList = retPinList;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -147,7 +164,69 @@ class _PineApple extends State {
                   ),
                 ),
               ],
-            )
+            ),
+            const SizedBox(height: 10),
+            Expanded(
+              child: ListView.builder(
+                itemCount: pinOrederList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        margin: const EdgeInsets.all(15),
+                        padding: const EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Color.fromARGB(255, 186, 185, 185),
+                                blurRadius: 8,
+                                offset: Offset(10, 10),
+                              ),
+                            ]),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // Text(
+                            //   tomatoOrderList[index].orderId,
+                            // ),
+                            Text(
+                              pinOrederList[index].custname,
+                              style: GoogleFonts.jost(
+                                fontWeight: FontWeight.w500,
+                                fontSize: 25,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "${pinOrederList[index].quantity} pics",
+                              style: GoogleFonts.jost(
+                                fontSize: 20,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              pinOrederList[index].address,
+                              style: GoogleFonts.jost(
+                                fontSize: 20,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
@@ -156,11 +235,11 @@ class _PineApple extends State {
 
   void bottonSheet() {
     showModalBottomSheet(
-      // shape: const RoundedRectangleBorder(
-      //   borderRadius: BorderRadius.all(
-      //     Radius.circular(50),
-      //   ),
-      // ),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(50),
+        ),
+      ),
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {
@@ -209,8 +288,9 @@ class _PineApple extends State {
               const SizedBox(height: 25),
               TextFormField(
                 controller: quantityController,
+                keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
-                  label: Text("Enter quantity in KG"),
+                  label: Text("Enter quantity in pics"),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(20),
@@ -274,7 +354,11 @@ class _PineApple extends State {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.blue.shade300)),
-                  onPressed: () {},
+                  onPressed: () async {
+                    submitData();
+                    List retPinList = await retPinData();
+                    pinOrederList = retPinList;
+                  },
                   child: Text(
                     "Buy now",
                     style: GoogleFonts.quicksand(
@@ -293,5 +377,25 @@ class _PineApple extends State {
         );
       },
     );
+  }
+
+  void submitData() {
+    if (custNameController.text.trim().isNotEmpty &&
+        quantityController.text.trim().isNotEmpty &&
+        addressController.text.trim().isNotEmpty) {
+      PineAppleModel pinObj = PineAppleModel(
+          custname: custNameController.text,
+          quantity: quantityController.text,
+          address: addressController.text);
+      insertPin(pinObj);
+    }
+    Navigator.of(context).pop();
+    clearController();
+  }
+
+  void clearController() {
+    custNameController.clear();
+    quantityController.clear();
+    addressController.clear();
   }
 }

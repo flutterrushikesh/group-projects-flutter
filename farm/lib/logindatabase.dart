@@ -1,5 +1,6 @@
 import 'package:farm/loginmodel.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:sqflite/sqlite_api.dart';
 
 dynamic database;
 //Login Database.
@@ -84,4 +85,27 @@ Future<List<LadyfingerModel>> retLadyData() async {
       );
     },
   );
+}
+
+//pineapple database.
+Future<void> insertPin(PineAppleModel obj) async {
+  final localDB = await database;
+
+  await localDB.insert(
+    'Pineapple',
+    obj.pineappleMap(),
+    conflictAlgorithm: ConflictAlgorithm.replace,
+  );
+}
+
+Future<List<PineAppleModel>> retPinData() async {
+  final localDB = await database;
+  List<Map<String, dynamic>> retPinList = await localDB.query('Pineapple');
+  return List.generate(retPinList.length, (i) {
+    return PineAppleModel(
+        orderId: retPinList[i]['orderId'],
+        custname: retPinList[i]['custname'],
+        quantity: retPinList[i]['quantity'],
+        address: retPinList[i]['address']);
+  });
 }

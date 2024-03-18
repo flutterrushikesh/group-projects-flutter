@@ -79,3 +79,30 @@ class LadyfingerModel {
     return '{orderId:$orderId, custname:$custname, quantity:$quantity, address:$address}';
   }
 }
+
+//Pinapple model class
+class PineAppleModel {
+  int? orderId;
+  String custname;
+  String quantity;
+  String address;
+
+  PineAppleModel(
+      {this.orderId,
+      required this.custname,
+      required this.quantity,
+      required this.address});
+
+  Map<String, dynamic> pineappleMap() {
+    return {
+      'custname': custname,
+      'quantity': quantity,
+      'address': address,
+    };
+  }
+
+  @override
+  String toString() {
+    return '{orderId:$orderId, custname:$custname, quantity:$quantity, address:$address}';
+  }
+}

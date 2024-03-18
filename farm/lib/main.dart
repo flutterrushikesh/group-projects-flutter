@@ -29,9 +29,15 @@ void main() async {
         quantity TEXT ,
         address TEXT
       )''');
+      await db.execute('''CREATE TABLE Pineapple(
+        orderId  INTEGER  PRIMARY KEY AUTOINCREMENT,
+        custname TEXT,
+        quantity TEXT ,
+        address TEXT
+      )''');
     },
   );
-  print(await retLadyData());
+  print(await retPinData());
 }
 
 // print(await retData());
