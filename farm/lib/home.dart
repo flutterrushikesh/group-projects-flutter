@@ -6,6 +6,8 @@ import 'package:farm/friuts/banana/banana.dart';
 import 'package:farm/friuts/pineapple/pineapple.dart';
 import 'package:farm/vegetable/bhendi/bhendi.dart';
 import 'package:farm/vegetable/flowers/flower.dart';
+import 'package:farm/vegetable/gobhi/gobhi.dart';
+import 'package:farm/vegetable/mashroom/mash.dart';
 import 'package:flutter/material.dart';
 import 'package:farm/vegetable/tamato/tamato.dart';
 // import 'package:flutter/widgets.dart';
@@ -289,57 +291,93 @@ class _HomePage extends State {
                           const SizedBox(
                             width: 20,
                           ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 160,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/images/gobhi.png",
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => const Gobhi(),
+                                  ),
+                                );
+                              });
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(10),
+                              height: 200,
+                              width: 160,
+                              // color: Colors.grey,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    "assets/images/gobhi.png",
+                                  ),
+                                  // opacity: 0.3,
+                                  fit: BoxFit.fill,
                                 ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
+                                color: Colors.grey,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Color.fromARGB(255, 187, 184, 184),
+                                      offset: Offset(10, 10),
+                                      blurRadius: 8),
+                                ],
                               ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
+                              child: const Text(
+                                "Gobhi",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
                             ),
                           ),
                           const SizedBox(
                             width: 20,
                           ),
-                          Container(
-                            padding: const EdgeInsets.all(10),
-                            height: 200,
-                            width: 160,
-                            // color: Colors.grey,
-                            decoration: const BoxDecoration(
-                              image: DecorationImage(
-                                image: AssetImage(
-                                  "assets/images/mashroom.png",
+                          GestureDetector(
+                            onTap: () {
+                              setState(() {
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => const Mash(),
+                                  ),
+                                );
+                              });
+                            },
+                            child: Container(
+                              padding: const EdgeInsets.all(10),
+                              height: 200,
+                              width: 160,
+                              // color: Colors.grey,
+                              decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(
+                                    "assets/images/mashroom.png",
+                                  ),
+                                  // opacity: 0.3,
+                                  fit: BoxFit.fill,
                                 ),
-                                // opacity: 0.3,
-                                fit: BoxFit.fill,
+                                color: Colors.grey,
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(15),
+                                ),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Color.fromARGB(255, 187, 184, 184),
+                                      offset: Offset(10, 10),
+                                      blurRadius: 8),
+                                ],
                               ),
-                              color: Colors.grey,
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(15),
+                              child: const Text(
+                                "Mashroom",
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 187, 184, 184),
-                                    offset: Offset(10, 10),
-                                    blurRadius: 8),
-                              ],
                             ),
                           ),
                         ],

@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class Info2 extends StatefulWidget {
-  const Info2({super.key});
+class Mash extends StatefulWidget {
+  const Mash({super.key});
   @override
-  State createState() => _Info2();
+  State createState() => _Mash();
 }
 
-class _Info2 extends State {
+class _Mash extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Ladyfinger",
+          "Flower",
           style: TextStyle(
             color: Colors.black,
             fontSize: 30,
@@ -43,7 +43,7 @@ class _Info2 extends State {
                   borderRadius: BorderRadius.all(
                     Radius.circular(20),
                   ),
-                  color: Color.fromARGB(255, 208, 228, 177)),
+                  color: Color.fromARGB(255, 171, 213, 166)),
               alignment: Alignment.center,
               width: 400,
               height: 520,
@@ -54,7 +54,7 @@ class _Info2 extends State {
                     Column(
                       children: [
                         Text(
-                          "Ladyfinger Information",
+                          "Flower Information",
                           style: TextStyle(
                             fontSize: 25,
                             fontWeight: FontWeight.w500,

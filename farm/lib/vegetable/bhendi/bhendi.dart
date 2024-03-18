@@ -36,7 +36,7 @@ class _Ladyfinger extends State {
         title: const Text(
           "Ladyfiger",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
