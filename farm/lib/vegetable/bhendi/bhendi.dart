@@ -235,11 +235,11 @@ class _Ladyfinger extends State {
 
   void bottonSheet() {
     showModalBottomSheet(
-      // shape: const RoundedRectangleBorder(
-      //   borderRadius: BorderRadius.all(
-      //     Radius.circular(50),
-      //   ),
-      // ),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(50),
+        ),
+      ),
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {
