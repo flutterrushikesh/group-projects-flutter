@@ -152,3 +152,13 @@ Future<void> updateBananaData(BananaModel obj) async {
     whereArgs: [obj.orderId],
   );
 }
+
+Future<void> deleteBananaData(BananaModel obj) async {
+  final localDB = await database;
+  await localDB.delete(
+    'Banana',
+    obj.bananaMap(),
+    where: 'orderId=?',
+    whereArgs: [obj.orderId],
+  );
+}
