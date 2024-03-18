@@ -28,11 +28,14 @@ class _Tamato extends State {
     Future.delayed(Duration.zero, () async {
       List retTomatoList = await retTomatoData();
       tomatoOrderList = retTomatoList;
+
+      setState(() {});
     });
   }
 
   @override
   Widget build(BuildContext context) {
+    log("IN BUILD");
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
       appBar: AppBar(
