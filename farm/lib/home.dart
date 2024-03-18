@@ -448,7 +448,7 @@ class _HomePage extends State {
                         decoration: const BoxDecoration(
                           image: DecorationImage(
                             image: AssetImage(
-                              "assets/fruits/image.png",
+                              "assets/fruits/pineapple.png",
                             ),
                             // opacity: 0.3,
                             fit: BoxFit.fill,

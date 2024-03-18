@@ -25,7 +25,7 @@ class _Info3 extends State {
             color: Colors.white,
           ),
         ],
-        backgroundColor: const Color.fromARGB(255, 223, 228, 122),
+        backgroundColor: Colors.amber.shade200,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -36,14 +36,14 @@ class _Info3 extends State {
               decoration: const BoxDecoration(
                   boxShadow: [
                     BoxShadow(
-                        color: Color.fromARGB(255, 179, 176, 176),
+                        color: Color.fromARGB(255, 159, 158, 158),
                         offset: Offset(10, 5),
                         blurRadius: 8),
                   ],
                   borderRadius: BorderRadius.all(
                     Radius.circular(20),
                   ),
-                  color: Color.fromARGB(255, 228, 227, 177)),
+                  color: Color.fromARGB(255, 255, 254, 168)),
               alignment: Alignment.center,
               width: 400,
               height: 520,

@@ -49,7 +49,7 @@ class _PineApple extends State {
             color: Colors.white,
           ),
         ],
-        backgroundColor: const Color.fromARGB(255, 223, 228, 122),
+        backgroundColor: Colors.amber.shade200,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -178,7 +178,7 @@ class _PineApple extends State {
                         margin: const EdgeInsets.all(15),
                         padding: const EdgeInsets.all(15),
                         decoration: BoxDecoration(
-                            color: Colors.grey.shade200,
+                            color: Colors.amber.shade100,
                             borderRadius: const BorderRadius.all(
                               Radius.circular(20),
                             ),
@@ -193,7 +193,7 @@ class _PineApple extends State {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              pinOrederList[index].custname,
+                              "Cust Name : ${pinOrederList[index].custname}",
                               style: GoogleFonts.jost(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 25,
@@ -203,7 +203,7 @@ class _PineApple extends State {
                               height: 10,
                             ),
                             Text(
-                              "${pinOrederList[index].quantity} pics",
+                              "Quantity : ${pinOrederList[index].quantity}",
                               style: GoogleFonts.jost(
                                 fontSize: 20,
                               ),
@@ -212,7 +212,7 @@ class _PineApple extends State {
                               height: 10,
                             ),
                             Text(
-                              pinOrederList[index].address,
+                              "Address : ${pinOrederList[index].address}",
                               style: GoogleFonts.jost(
                                 fontSize: 20,
                               ),

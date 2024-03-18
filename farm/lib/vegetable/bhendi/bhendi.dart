@@ -59,13 +59,8 @@ class _Ladyfinger extends State {
               decoration: const BoxDecoration(
                   image: DecorationImage(
                     image: AssetImage(
-                      "assets/images/tamato2.png",
-
-                      // opacity: 0.9,
-                      // opacity: 0.3,
+                      "assets/images/lady1.png",
                     ),
-                    // opacity: 0.9,
-                    // opacity: 0.3,
                     fit: BoxFit.fill,
                   ),
                   boxShadow: [
@@ -201,22 +196,24 @@ class _Ladyfinger extends State {
                             // Text(
                             //   ladyOrderList[index].orderId,
                             // ),
+
                             Text(
-                              ladyOrderList[index].custname,
+                              "Cust Name : ${ladyOrderList[index].custname}",
+                              style: GoogleFonts.jost(
+                                fontSize: 22,
+                                fontWeight: FontWeight.w500,
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            Text(
+                              "Quantity : ${ladyOrderList[index].quantity} kg",
                               style: GoogleFonts.jost(
                                 fontSize: 20,
                               ),
                             ),
                             const SizedBox(height: 10),
                             Text(
-                              "${ladyOrderList[index].quantity} kg",
-                              style: GoogleFonts.jost(
-                                fontSize: 20,
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            Text(
-                              ladyOrderList[index].address,
+                              "Address : ${ladyOrderList[index].address}",
                               style: GoogleFonts.jost(
                                 fontSize: 20,
                               ),
@@ -237,11 +234,11 @@ class _Ladyfinger extends State {
 
   void bottonSheet() {
     showModalBottomSheet(
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(50),
-        ),
-      ),
+      // shape: const RoundedRectangleBorder(
+      //   borderRadius: BorderRadius.all(
+      //     Radius.circular(50),
+      //   ),
+      // ),
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {

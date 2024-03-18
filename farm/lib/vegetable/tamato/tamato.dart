@@ -1,7 +1,6 @@
 // import 'package:farm/vegetable/tamato/creat.dart';
 // import 'package:farm/vegetable/tamato/info1.dart';
 import 'dart:developer';
-
 import 'package:farm/vegetable/tamato/info1.dart';
 import 'package:flutter/material.dart';
 import 'package:farm/loginmodel.dart';
@@ -28,7 +27,6 @@ class _Tamato extends State {
     Future.delayed(Duration.zero, () async {
       List retTomatoList = await retTomatoData();
       tomatoOrderList = retTomatoList;
-
       setState(() {});
     });
   }
@@ -204,17 +202,17 @@ class _Tamato extends State {
                             //   tomatoOrderList[index].orderId,
                             // ),
                             Text(
-                              tomatoOrderList[index].name,
+                              "Cust Name : ${tomatoOrderList[index].name}",
                               style: GoogleFonts.jost(
                                 fontWeight: FontWeight.w500,
-                                fontSize: 25,
+                                fontSize: 22,
                               ),
                             ),
                             const SizedBox(
                               height: 10,
                             ),
                             Text(
-                              "${tomatoOrderList[index].quantity} kg",
+                              "Quantity : ${tomatoOrderList[index].quantity} kg",
                               style: GoogleFonts.jost(
                                 fontSize: 20,
                               ),
@@ -223,7 +221,7 @@ class _Tamato extends State {
                               height: 10,
                             ),
                             Text(
-                              tomatoOrderList[index].address,
+                              "Address : ${tomatoOrderList[index].address}",
                               style: GoogleFonts.jost(
                                 fontSize: 20,
                               ),
@@ -244,11 +242,11 @@ class _Tamato extends State {
 
   void bottonSheet() {
     showModalBottomSheet(
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(50),
-        ),
-      ),
+      // shape: const RoundedRectangleBorder(
+      //   borderRadius: BorderRadius.all(
+      //     Radius.circular(50),
+      //   ),
+      // ),
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {
