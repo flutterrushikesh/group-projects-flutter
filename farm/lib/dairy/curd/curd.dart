@@ -1,45 +1,26 @@
-// import 'package:farm/vegetable/tamato/creat.dart';
-// import 'package:farm/vegetable/tamato/info1.dart';
-import 'dart:developer';
-
-import 'package:farm/vegetable/tamato/info1.dart';
+import 'package:farm/dairy/curd/curdinfo.dart';
 import 'package:flutter/material.dart';
-import 'package:farm/loginmodel.dart';
-import 'package:farm/logindatabase.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Tamato extends StatefulWidget {
-  const Tamato({super.key});
+class Curd extends StatefulWidget {
+  const Curd({super.key});
   @override
-  State createState() => _Tamato();
+  State createState() => _Curd();
 }
 
-class _Tamato extends State {
+class _Curd extends State {
   TextEditingController custNameController = TextEditingController();
   TextEditingController quantityController = TextEditingController();
   TextEditingController addressController = TextEditingController();
-
-  List tomatoOrderList = [];
-
-  @override
-  void initState() {
-    log("In init state");
-    super.initState();
-    Future.delayed(Duration.zero, () async {
-      List retTomatoList = await retTomatoData();
-      tomatoOrderList = retTomatoList;
-    });
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.grey.shade300,
+      backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
         title: const Text(
-          "Tamato",
+          "Curd",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
@@ -50,7 +31,7 @@ class _Tamato extends State {
             color: Colors.white,
           ),
         ],
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.yellow.shade200,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -60,29 +41,24 @@ class _Tamato extends State {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    "assets/images/tamato2.png",
+                    "assets/dairy/curd1.png",
                   ),
-                  // opacity: 0.9,
-                  // opacity: 0.3,
                   fit: BoxFit.fill,
                 ),
                 boxShadow: [
                   BoxShadow(
-                    color: Color.fromARGB(255, 179, 176, 176),
-                    offset: Offset(10, 10),
-                    blurRadius: 8,
-                  ),
+                      color: Color.fromARGB(255, 179, 176, 176),
+                      offset: Offset(10, 10),
+                      blurRadius: 8),
                 ],
                 borderRadius: BorderRadius.all(
                   Radius.circular(20),
                 ),
-                color: Color.fromARGB(255, 228, 163, 122),
+                // color: Color.fromARGB(255, 129, 228, 122),
               ),
               alignment: Alignment.center,
               width: 400,
               height: 200,
-
-              // padding: const EdgeInsets.all(8),
             ),
             const SizedBox(
               height: 30,
@@ -117,7 +93,7 @@ class _Tamato extends State {
                       setState(() {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => const Info1(),
+                            builder: (context) => const Curd1(),
                           ),
                         );
                       });
@@ -171,61 +147,6 @@ class _Tamato extends State {
                   ),
                 ),
               ],
-            ),
-            Expanded(
-              child: ListView.builder(
-                itemCount: tomatoOrderList.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return Column(
-                    children: [
-                      Container(
-                        width: double.infinity,
-                        margin: const EdgeInsets.all(15),
-                        padding: const EdgeInsets.all(15),
-                        decoration: const BoxDecoration(
-                            color: Color.fromARGB(255, 243, 182, 182),
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(20),
-                            ),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Color.fromARGB(255, 186, 185, 185),
-                                blurRadius: 8,
-                                offset: Offset(10, 10),
-                              ),
-                            ]),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            // Text(
-                            //   tomatoOrderList[index].orderId,
-                            // ),
-                            Text(
-                              tomatoOrderList[index].name,
-                              style: GoogleFonts.jost(
-                                fontWeight: FontWeight.w500,
-                                fontSize: 25,
-                              ),
-                            ),
-                            Text(
-                              "${tomatoOrderList[index].quantity} kg",
-                              style: GoogleFonts.jost(
-                                fontSize: 20,
-                              ),
-                            ),
-                            Text(
-                              tomatoOrderList[index].address,
-                              style: GoogleFonts.jost(
-                                fontSize: 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  );
-                },
-              ),
             )
           ],
         ),
@@ -288,7 +209,6 @@ class _Tamato extends State {
               const SizedBox(height: 25),
               TextFormField(
                 controller: quantityController,
-                keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
                   label: Text("Enter quantity in KG"),
                   enabledBorder: OutlineInputBorder(
@@ -354,11 +274,7 @@ class _Tamato extends State {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.blue.shade300)),
-                  onPressed: () async {
-                    submitData();
-                    List retTomatoList = await retTomatoData();
-                    tomatoOrderList = retTomatoList;
-                  },
+                  onPressed: () {},
                   child: Text(
                     "Buy now",
                     style: GoogleFonts.quicksand(
@@ -377,25 +293,5 @@ class _Tamato extends State {
         );
       },
     );
-  }
-
-  void submitData() {
-    if (custNameController.text.trim().isNotEmpty &&
-        quantityController.text.trim().isNotEmpty &&
-        addressController.text.trim().isNotEmpty) {
-      Tomato tomatoObj = Tomato(
-          name: custNameController.text,
-          quantity: quantityController.text,
-          address: addressController.text);
-      insertTomatoData(tomatoObj);
-    }
-    Navigator.of(context).pop();
-    clearControllers();
-  }
-
-  void clearControllers() {
-    custNameController.clear();
-    quantityController.clear();
-    addressController.clear();
   }
 }

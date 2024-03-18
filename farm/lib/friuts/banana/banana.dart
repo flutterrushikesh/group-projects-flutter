@@ -20,7 +20,7 @@ class _Banana extends State {
         title: const Text(
           "Banana",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
             fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
@@ -31,7 +31,7 @@ class _Banana extends State {
             color: Colors.white,
           ),
         ],
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.yellow.shade200,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -156,11 +156,11 @@ class _Banana extends State {
 
   void bottonSheet() {
     showModalBottomSheet(
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(50),
-        ),
-      ),
+      // shape: const RoundedRectangleBorder(
+      //   borderRadius: BorderRadius.all(
+      //     Radius.circular(50),
+      //   ),
+      // ),
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {

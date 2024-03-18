@@ -1,3 +1,5 @@
+import 'package:farm/dairy/curd/curd.dart';
+import 'package:farm/dairy/milk/milk.dart';
 import 'package:farm/friuts/banana/banana.dart';
 import 'package:farm/friuts/pineapple/pineapple.dart';
 import 'package:farm/vegetable/bhendi/bhendi.dart';
@@ -610,7 +612,7 @@ class _HomePage extends State {
                         setState(() {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => const Banana(),
+                              builder: (context) => const Milk(),
                             ),
                           );
                         });
@@ -649,7 +651,7 @@ class _HomePage extends State {
                         setState(() {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => const Banana(),
+                              builder: (context) => const Curd(),
                             ),
                           );
                         });
@@ -688,7 +690,7 @@ class _HomePage extends State {
                         setState(() {
                           Navigator.of(context).push(
                             MaterialPageRoute(
-                              builder: (context) => const Banana(),
+                              builder: (context) => const Curd(),
                             ),
                           );
                         });

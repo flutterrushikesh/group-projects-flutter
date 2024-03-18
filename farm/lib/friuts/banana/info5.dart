@@ -15,7 +15,7 @@ class _Info5 extends State {
           "Banana",
           style: TextStyle(
             color: Colors.black,
-            fontSize: 22,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -25,7 +25,7 @@ class _Info5 extends State {
             color: Colors.white,
           ),
         ],
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.yellow.shade200,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -33,17 +33,18 @@ class _Info5 extends State {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              decoration: const BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color.fromARGB(255, 179, 176, 176),
-                        offset: Offset(10, 10),
-                        blurRadius: 8),
-                  ],
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20),
-                  ),
-                  color: Color.fromARGB(255, 171, 213, 166)),
+              decoration: BoxDecoration(
+                boxShadow: const [
+                  BoxShadow(
+                      color: Color.fromARGB(255, 179, 176, 176),
+                      offset: Offset(10, 10),
+                      blurRadius: 8),
+                ],
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(20),
+                ),
+                color: Colors.yellow.shade100,
+              ),
               alignment: Alignment.center,
               width: 400,
               height: 520,
@@ -79,7 +80,7 @@ class _Info5 extends State {
   ''',
                           style: TextStyle(
                             fontSize: 20,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w300,
                           ),
                         ),
                       ],

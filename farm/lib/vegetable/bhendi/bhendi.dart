@@ -42,7 +42,7 @@ class _Ladyfinger extends State {
                 decoration: const BoxDecoration(
                     image: DecorationImage(
                       image: AssetImage(
-                        "assets/images/tamato2.png",
+                        "assets/images/lady1.png",
                       ),
                       // opacity: 0.9,
                       // opacity: 0.3,
@@ -162,11 +162,11 @@ class _Ladyfinger extends State {
 
   void bottonSheet() {
     showModalBottomSheet(
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(50),
-        ),
-      ),
+      // shape: const RoundedRectangleBorder(
+      //   borderRadius: BorderRadius.all(
+      //     Radius.circular(50),
+      //   ),
+      // ),
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {
