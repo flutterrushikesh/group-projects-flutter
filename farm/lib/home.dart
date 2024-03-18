@@ -790,9 +790,10 @@ class _HomePage extends State {
                           ),
                           boxShadow: [
                             BoxShadow(
-                                color: Color.fromARGB(255, 187, 184, 184),
-                                offset: Offset(10, 10),
-                                blurRadius: 8),
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8,
+                            ),
                           ],
                         ),
                       ),
@@ -835,9 +836,9 @@ class _HomePage extends State {
                       ),
                     ),
                   ),
-                  // First Row Vegetables
                 ],
               ),
+              // First Row Vegetables
               const SizedBox(height: 5),
               SingleChildScrollView(
                 scrollDirection: Axis.horizontal,
@@ -873,9 +874,10 @@ class _HomePage extends State {
                           ),
                           boxShadow: [
                             BoxShadow(
-                                color: Color.fromARGB(255, 187, 184, 184),
-                                offset: Offset(10, 10),
-                                blurRadius: 8),
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8,
+                            ),
                           ],
                         ),
                       ),
@@ -912,9 +914,10 @@ class _HomePage extends State {
                           ),
                           boxShadow: [
                             BoxShadow(
-                                color: Color.fromARGB(255, 187, 184, 184),
-                                offset: Offset(10, 10),
-                                blurRadius: 8),
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8,
+                            ),
                           ],
                         ),
                       ),
@@ -951,9 +954,10 @@ class _HomePage extends State {
                           ),
                           boxShadow: [
                             BoxShadow(
-                                color: Color.fromARGB(255, 187, 184, 184),
-                                offset: Offset(10, 10),
-                                blurRadius: 8),
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8,
+                            ),
                           ],
                         ),
                       ),
@@ -990,9 +994,10 @@ class _HomePage extends State {
                           ),
                           boxShadow: [
                             BoxShadow(
-                                color: Color.fromARGB(255, 187, 184, 184),
-                                offset: Offset(10, 10),
-                                blurRadius: 8),
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8,
+                            ),
                           ],
                         ),
                       ),
@@ -1073,9 +1078,10 @@ class _HomePage extends State {
                           ),
                           boxShadow: [
                             BoxShadow(
-                                color: Color.fromARGB(255, 187, 184, 184),
-                                offset: Offset(10, 10),
-                                blurRadius: 8),
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8,
+                            ),
                           ],
                         ),
                       ),
@@ -1112,9 +1118,10 @@ class _HomePage extends State {
                           ),
                           boxShadow: [
                             BoxShadow(
-                                color: Color.fromARGB(255, 187, 184, 184),
-                                offset: Offset(10, 10),
-                                blurRadius: 8),
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8,
+                            ),
                           ],
                         ),
                       ),
@@ -1151,9 +1158,10 @@ class _HomePage extends State {
                           ),
                           boxShadow: [
                             BoxShadow(
-                                color: Color.fromARGB(255, 187, 184, 184),
-                                offset: Offset(10, 10),
-                                blurRadius: 8),
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8,
+                            ),
                           ],
                         ),
                       ),
@@ -1190,9 +1198,10 @@ class _HomePage extends State {
                           ),
                           boxShadow: [
                             BoxShadow(
-                                color: Color.fromARGB(255, 187, 184, 184),
-                                offset: Offset(10, 10),
-                                blurRadius: 8),
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8,
+                            ),
                           ],
                         ),
                       ),
