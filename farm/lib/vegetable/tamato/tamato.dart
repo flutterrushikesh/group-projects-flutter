@@ -182,12 +182,12 @@ class _Tamato extends State {
                         width: double.infinity,
                         margin: const EdgeInsets.all(15),
                         padding: const EdgeInsets.all(15),
-                        decoration: const BoxDecoration(
-                            color: Color.fromARGB(255, 243, 182, 182),
-                            borderRadius: BorderRadius.all(
+                        decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius: const BorderRadius.all(
                               Radius.circular(20),
                             ),
-                            boxShadow: [
+                            boxShadow: const [
                               BoxShadow(
                                 color: Color.fromARGB(255, 186, 185, 185),
                                 blurRadius: 8,
@@ -207,11 +207,17 @@ class _Tamato extends State {
                                 fontSize: 25,
                               ),
                             ),
+                            const SizedBox(
+                              height: 10,
+                            ),
                             Text(
                               "${tomatoOrderList[index].quantity} kg",
                               style: GoogleFonts.jost(
                                 fontSize: 20,
                               ),
+                            ),
+                            const SizedBox(
+                              height: 10,
                             ),
                             Text(
                               tomatoOrderList[index].address,
@@ -235,11 +241,11 @@ class _Tamato extends State {
 
   void bottonSheet() {
     showModalBottomSheet(
-      // shape: const RoundedRectangleBorder(
-      //   borderRadius: BorderRadius.all(
-      //     Radius.circular(50),
-      //   ),
-      // ),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(50),
+        ),
+      ),
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {
