@@ -159,7 +159,7 @@ class _HomePage extends State {
                             child: Container(
                               padding: const EdgeInsets.all(10),
                               height: 200,
-                              width: 175,
+                              width: 160,
                               // color: Colors.grey,
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
@@ -206,7 +206,7 @@ class _HomePage extends State {
                             child: Container(
                               padding: const EdgeInsets.all(10),
                               height: 200,
-                              width: 175,
+                              width: 160,
                               // color: Colors.grey,
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
@@ -252,7 +252,7 @@ class _HomePage extends State {
                             child: Container(
                               padding: const EdgeInsets.all(10),
                               height: 200,
-                              width: 175,
+                              width: 160,
                               // color: Colors.grey,
                               decoration: const BoxDecoration(
                                 image: DecorationImage(
@@ -288,7 +288,7 @@ class _HomePage extends State {
                           Container(
                             padding: const EdgeInsets.all(10),
                             height: 200,
-                            width: 175,
+                            width: 160,
                             // color: Colors.grey,
                             decoration: const BoxDecoration(
                               image: DecorationImage(
@@ -316,7 +316,7 @@ class _HomePage extends State {
                           Container(
                             padding: const EdgeInsets.all(10),
                             height: 200,
-                            width: 175,
+                            width: 160,
                             // color: Colors.grey,
                             decoration: const BoxDecoration(
                               image: DecorationImage(
@@ -857,7 +857,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -896,7 +896,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -935,7 +935,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -974,7 +974,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -1057,7 +1057,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -1096,7 +1096,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -1135,7 +1135,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -1174,7 +1174,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -1213,7 +1213,7 @@ class _HomePage extends State {
                       child: Container(
                         padding: const EdgeInsets.all(10),
                         height: 200,
-                        width: 150,
+                        width: 160,
                         // color: Colors.grey,
                         decoration: const BoxDecoration(
                           image: DecorationImage(
@@ -1229,9 +1229,10 @@ class _HomePage extends State {
                           ),
                           boxShadow: [
                             BoxShadow(
-                                color: Color.fromARGB(255, 187, 184, 184),
-                                offset: Offset(10, 10),
-                                blurRadius: 8),
+                              color: Color.fromARGB(255, 187, 184, 184),
+                              offset: Offset(10, 10),
+                              blurRadius: 8,
+                            ),
                           ],
                         ),
                       ),
