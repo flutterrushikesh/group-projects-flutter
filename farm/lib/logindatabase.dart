@@ -141,3 +141,14 @@ Future<List<BananaModel>> retBananaData() async {
     },
   );
 }
+
+Future<void> updateBananaData(BananaModel obj) async {
+  final localDB = await database;
+
+  await localDB.update(
+    'Banana',
+    obj.bananaMap(),
+    where: 'orderId=?',
+    whereArgs: [obj.orderId],
+  );
+}

@@ -181,7 +181,10 @@ class _Banana extends State {
                               const SizedBox(height: 0),
                               GestureDetector(
                                 onTap: () {
-                                  setState(() {});
+                                  // setState(() {
+                                  //   updateBananaData(
+                                  //       bananaOrderList[index]['orderId']);
+                                  // });
                                 },
                                 child: Container(
                                   padding: const EdgeInsets.all(10),
@@ -202,7 +205,9 @@ class _Banana extends State {
                               ),
                               GestureDetector(
                                 onTap: () {
-                                  setState(() {});
+                                  setState(() {
+                                    deletObj(bananaOrderList[index]);
+                                  });
                                 },
                                 child: Container(
                                   height: 40,
@@ -284,6 +289,12 @@ class _Banana extends State {
         ),
       ),
     );
+  }
+
+  void deletObj(BananaModel obj) {
+    setState(() {
+      bananaOrderList.remove(obj);
+    });
   }
 
   void bottonSheet() {

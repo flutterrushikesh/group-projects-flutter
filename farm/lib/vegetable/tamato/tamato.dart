@@ -202,7 +202,7 @@ class _Tamato extends State {
                             //   tomatoOrderList[index].orderId,
                             // ),
                             Text(
-                              "Cust Name : ${tomatoOrderList[index].custname}",
+                              "Cust Name : ${tomatoOrderList[index].name}",
                               style: GoogleFonts.jost(
                                 fontWeight: FontWeight.w500,
                                 fontSize: 20,
