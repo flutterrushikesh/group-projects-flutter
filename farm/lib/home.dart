@@ -1,3 +1,4 @@
+import 'package:farm/Info.dart';
 import 'package:farm/daily/rice/rice.dart';
 import 'package:farm/daily/wheat/wheat.dart';
 import 'package:farm/dairy/curd/curd.dart';
@@ -52,39 +53,19 @@ class _HomePage extends State {
               PopupMenuItem(
                 child: Row(
                   children: [
-                    const Icon(Icons.share),
-                    GestureDetector(
-                      // onTap: () {
-                      //   setState(() {
-                      //     Navigator.of(context).push(
-                      //       MaterialPageRoute(
-                      //         builder: (context) => const Share(),
-                      //       ),
-                      //     );
-                      //   });
-                      // },
-                      // margin: const EdgeInsets.only(left: 10),
-                      child: const Text("   Share"),
-                    ),
-                  ],
-                ),
-              ),
-              PopupMenuItem(
-                child: Row(
-                  children: [
                     const Icon(Icons.info),
                     GestureDetector(
-                      // onTap: () {
-                      //   setState(() {
-                      //     Navigator.of(context).push(
-                      //       MaterialPageRoute(
-                      //         builder: (context) => const Info(),
-                      //       ),
-                      //     );
-                      //   });
-                      // },
+                      onTap: () {
+                        setState(() {
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const About(),
+                            ),
+                          );
+                        });
+                      },
                       // margin: const EdgeInsets.only(left: 10),
-                      child: const Text("   Info"),
+                      child: const Text("   Aout us"),
                     ),
                   ],
                 ),
