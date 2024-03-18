@@ -18,14 +18,20 @@ void main() async {
         password TEXT
       )''');
       await db.execute('''CREATE TABLE Tomato(
-        orderId TEXT PRIMARY KEY AUTOINCREMENT,
+        orderId INTEGER  PRIMARY KEY AUTOINCREMENT,
         name TEXT,
+        quantity TEXT ,
+        address TEXT
+      )''');
+      await db.execute('''CREATE TABLE Ladyfinger(
+        orderId  INTEGER  PRIMARY KEY AUTOINCREMENT,
+        custname TEXT,
         quantity TEXT ,
         address TEXT
       )''');
     },
   );
-  print(await retTomatoData());
+  print(await retData());
 }
 
 // print(await retData());
