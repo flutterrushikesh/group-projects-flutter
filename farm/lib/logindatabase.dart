@@ -42,13 +42,17 @@ Future<void> insertTomatoData(Tomato obj) async {
 Future<List<Tomato>> retTomatoData() async {
   final localDB = await database;
 
-  List<Map<String, dynamic>> retList = await localDB.query('Tomato');
-  return List.generate(retList.length, (i) {
-    return Tomato(
-      orderId: retList[i]['orderId'],
-      name: retList[i]['name'],
-      quantity: retList[i]['quantity'],
-      address: retList[i]['address'],
-    );
-  });
+  List retList = await localDB.query('Tomato');
+  return List.generate(
+    retList.length,
+    (i) {
+      print(retList[i]['orderId']);
+      return Tomato(
+        orderId: retList[i]['orderId'],
+        name: retList[i]['name'],
+        quantity: retList[i]['quantity'],
+        address: retList[i]['address'],
+      );
+    },
+  );
 }

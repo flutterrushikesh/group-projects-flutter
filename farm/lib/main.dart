@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:farm/splash.dart';
+import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
 import 'logindatabase.dart';
@@ -8,7 +8,7 @@ void main() async {
   runApp(const MyApp());
 
   database = openDatabase(
-    join(await getDatabasesPath(), "login1DB.db"),
+    join(await getDatabasesPath(), "Info1DB.db"),
     version: 1,
     onCreate: (db, version) async {
       await db.execute('''CREATE TABLE Sign(
@@ -18,14 +18,14 @@ void main() async {
         password TEXT
       )''');
       await db.execute('''CREATE TABLE Tomato(
-        orderId INTGER PRIMARY KEY,
+        orderId TEXT PRIMARY KEY AUTOINCREMENT,
         name TEXT,
         quantity TEXT ,
-        address TEXT,
+        address TEXT
       )''');
     },
   );
-  // print(await);
+  print(await retTomatoData());
 }
 
 // print(await retData());
