@@ -1,3 +1,5 @@
+import 'package:farm/daily/rice/rice.dart';
+import 'package:farm/daily/wheat/wheat.dart';
 import 'package:farm/dairy/curd/curd.dart';
 import 'package:farm/dairy/milk/milk.dart';
 import 'package:farm/friuts/banana/banana.dart';
@@ -850,11 +852,11 @@ class _HomePage extends State {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          // Navigator.of(context).push(
-                          //   MaterialPageRoute(
-                          //     builder: (context) => const Rice1(),
-                          //   ),
-                          // );
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Rice1(),
+                            ),
+                          );
                         });
                       },
                       child: Container(
@@ -890,11 +892,11 @@ class _HomePage extends State {
                     GestureDetector(
                       onTap: () {
                         setState(() {
-                          // Navigator.of(context).push(
-                          //   MaterialPageRoute(
-                          //     builder: (context) => const Rice1(),
-                          //   ),
-                          // );
+                          Navigator.of(context).push(
+                            MaterialPageRoute(
+                              builder: (context) => const Wheat(),
+                            ),
+                          );
                         });
                       },
                       child: Container(
