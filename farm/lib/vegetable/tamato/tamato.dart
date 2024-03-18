@@ -383,9 +383,10 @@ class _Tamato extends State {
         quantityController.text.trim().isNotEmpty &&
         addressController.text.trim().isNotEmpty) {
       Tomato tomatoObj = Tomato(
-          name: custNameController.text,
-          quantity: quantityController.text,
-          address: addressController.text);
+        name: custNameController.text,
+        quantity: quantityController.text,
+        address: addressController.text,
+      );
       insertTomatoData(tomatoObj);
     }
     Navigator.of(context).pop();
