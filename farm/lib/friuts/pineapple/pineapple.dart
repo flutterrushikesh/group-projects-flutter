@@ -178,7 +178,7 @@ class _PineApple extends State {
                         margin: const EdgeInsets.all(15),
                         padding: const EdgeInsets.all(15),
                         decoration: BoxDecoration(
-                            color: Colors.amber.shade100,
+                            color: Colors.grey.shade200,
                             borderRadius: const BorderRadius.all(
                               Radius.circular(20),
                             ),
@@ -196,7 +196,7 @@ class _PineApple extends State {
                               "Cust Name : ${pinOrederList[index].custname}",
                               style: GoogleFonts.jost(
                                 fontWeight: FontWeight.w500,
-                                fontSize: 25,
+                                fontSize: 20,
                               ),
                             ),
                             const SizedBox(
@@ -205,7 +205,7 @@ class _PineApple extends State {
                             Text(
                               "Quantity : ${pinOrederList[index].quantity}",
                               style: GoogleFonts.jost(
-                                fontSize: 20,
+                                fontSize: 18,
                               ),
                             ),
                             const SizedBox(
@@ -214,7 +214,7 @@ class _PineApple extends State {
                             Text(
                               "Address : ${pinOrederList[index].address}",
                               style: GoogleFonts.jost(
-                                fontSize: 20,
+                                fontSize: 18,
                               ),
                             ),
                           ],
@@ -353,6 +353,7 @@ class _PineApple extends State {
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.blue.shade300)),
                   onPressed: () async {
+                    setState(() {});
                     submitData();
                     List retPinList = await retPinData();
                     pinOrederList = retPinList;

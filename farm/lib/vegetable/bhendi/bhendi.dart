@@ -200,22 +200,26 @@ class _Ladyfinger extends State {
                             Text(
                               "Cust Name : ${ladyOrderList[index].custname}",
                               style: GoogleFonts.jost(
-                                fontSize: 22,
                                 fontWeight: FontWeight.w500,
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            Text(
-                              "Quantity : ${ladyOrderList[index].quantity} kg",
-                              style: GoogleFonts.jost(
                                 fontSize: 20,
                               ),
                             ),
-                            const SizedBox(height: 10),
+                            const SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              "Quantity : ${ladyOrderList[index].quantity}",
+                              style: GoogleFonts.jost(
+                                fontSize: 18,
+                              ),
+                            ),
+                            const SizedBox(
+                              height: 10,
+                            ),
                             Text(
                               "Address : ${ladyOrderList[index].address}",
                               style: GoogleFonts.jost(
-                                fontSize: 20,
+                                fontSize: 18,
                               ),
                             ),
                           ],
@@ -354,6 +358,7 @@ class _Ladyfinger extends State {
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.blue.shade300)),
                   onPressed: () async {
+                    setState(() {});
                     submitData();
                     List retLadyList = await retLadyData();
                     ladyOrderList = retLadyList;
