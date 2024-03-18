@@ -1,7 +1,7 @@
 import 'dart:developer';
 import 'package:farm/logindatabase.dart';
 import 'package:farm/loginmodel.dart';
-import 'package:farm/vegetable/bhendi/info2.dart';
+// import 'package:farm/vegetable/bhendi/info2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -49,6 +49,7 @@ class _Ladyfinger extends State {
         ],
         backgroundColor: Colors.green,
       ),
+<<<<<<< HEAD
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
@@ -58,6 +59,22 @@ class _Ladyfinger extends State {
                   image: DecorationImage(
                     image: AssetImage(
                       "assets/images/tamato2.png",
+=======
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            children: [
+              Container(
+                decoration: const BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(
+                        "assets/images/lady1.png",
+                      ),
+                      // opacity: 0.9,
+                      // opacity: 0.3,
+                      fit: BoxFit.fill,
+>>>>>>> d7e7497b2ee5e033bd4732bf9dea34a691fdf29d
                     ),
                     // opacity: 0.9,
                     // opacity: 0.3,
@@ -230,11 +247,11 @@ class _Ladyfinger extends State {
 
   void bottonSheet() {
     showModalBottomSheet(
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(50),
-        ),
-      ),
+      // shape: const RoundedRectangleBorder(
+      //   borderRadius: BorderRadius.all(
+      //     Radius.circular(50),
+      //   ),
+      // ),
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {

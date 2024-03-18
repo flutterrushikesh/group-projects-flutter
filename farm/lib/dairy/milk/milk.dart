@@ -1,14 +1,14 @@
-import 'package:farm/friuts/banana/info5.dart';
+import 'package:farm/dairy/milk/infomilk.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class Banana extends StatefulWidget {
-  const Banana({super.key});
+class Milk extends StatefulWidget {
+  const Milk({super.key});
   @override
-  State createState() => _Banana();
+  State createState() => _Milk();
 }
 
-class _Banana extends State {
+class _Milk extends State {
   TextEditingController custNameController = TextEditingController();
   TextEditingController quantityController = TextEditingController();
   TextEditingController addressController = TextEditingController();
@@ -18,7 +18,7 @@ class _Banana extends State {
       backgroundColor: Colors.grey.shade200,
       appBar: AppBar(
         title: const Text(
-          "Banana",
+          "Milk",
           style: TextStyle(
             color: Colors.black,
             fontSize: 30,
@@ -41,7 +41,7 @@ class _Banana extends State {
               decoration: const BoxDecoration(
                 image: DecorationImage(
                   image: AssetImage(
-                    "assets/images/banana1.png",
+                    "assets/dairy/milk1.png",
                   ),
                   fit: BoxFit.fill,
                 ),
@@ -93,7 +93,7 @@ class _Banana extends State {
                       setState(() {
                         Navigator.of(context).push(
                           MaterialPageRoute(
-                            builder: (context) => const Info5(),
+                            builder: (context) => const MilkInfo(),
                           ),
                         );
                       });

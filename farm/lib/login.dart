@@ -170,7 +170,9 @@ class _LoginScreenState extends State {
                           child: isTogglePass(),
                         ),
                         hintText: "Enter password",
-                        prefixIcon: const Icon(Icons.lock),
+                        prefixIcon: const Icon(
+                          Icons.lock,
+                        ),
                       ),
                       textInputAction: TextInputAction.done,
                       validator: (value) {

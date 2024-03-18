@@ -182,16 +182,16 @@ class _Tamato extends State {
                         width: double.infinity,
                         margin: const EdgeInsets.all(15),
                         padding: const EdgeInsets.all(15),
-                        decoration: BoxDecoration(
-                            color: Colors.grey.shade200,
-                            borderRadius: const BorderRadius.all(
+                        decoration: const BoxDecoration(
+                            color: Color.fromARGB(255, 243, 182, 182),
+                            borderRadius: BorderRadius.all(
                               Radius.circular(20),
                             ),
-                            boxShadow: const [
+                            boxShadow: [
                               BoxShadow(
                                 color: Color.fromARGB(255, 186, 185, 185),
                                 blurRadius: 8,
-                                offset: Offset(5, 5),
+                                offset: Offset(10, 10),
                               ),
                             ]),
                         child: Column(
@@ -203,7 +203,8 @@ class _Tamato extends State {
                             Text(
                               tomatoOrderList[index].name,
                               style: GoogleFonts.jost(
-                                fontSize: 20,
+                                fontWeight: FontWeight.w500,
+                                fontSize: 25,
                               ),
                             ),
                             Text(
@@ -234,11 +235,11 @@ class _Tamato extends State {
 
   void bottonSheet() {
     showModalBottomSheet(
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(50),
-        ),
-      ),
+      // shape: const RoundedRectangleBorder(
+      //   borderRadius: BorderRadius.all(
+      //     Radius.circular(50),
+      //   ),
+      // ),
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {

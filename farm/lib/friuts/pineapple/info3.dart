@@ -15,7 +15,7 @@ class _Info3 extends State {
           "Pineapple",
           style: TextStyle(
             color: Colors.black,
-            fontSize: 22,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -43,7 +43,7 @@ class _Info3 extends State {
                   borderRadius: BorderRadius.all(
                     Radius.circular(20),
                   ),
-                  color: Color.fromARGB(255, 208, 228, 177)),
+                  color: Color.fromARGB(255, 228, 227, 177)),
               alignment: Alignment.center,
               width: 400,
               height: 520,
@@ -79,7 +79,7 @@ class _Info3 extends State {
   ''',
                           style: TextStyle(
                             fontSize: 20,
-                            fontWeight: FontWeight.w500,
+                            // fontWeight: FontWeight.w300,
                           ),
                         ),
                       ],

@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 
-class Info1 extends StatefulWidget {
-  const Info1({super.key});
+class MilkInfo extends StatefulWidget {
+  const MilkInfo({super.key});
   @override
-  State createState() => _Info1();
+  State createState() => _MilkInfo();
 }
 
-class _Info1 extends State {
+class _MilkInfo extends State {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          "Tamato",
+          "Milk",
           style: TextStyle(
             color: Colors.black,
-            fontSize: 22,
+            fontSize: 30,
             fontWeight: FontWeight.bold,
           ),
         ),
@@ -25,7 +25,7 @@ class _Info1 extends State {
             color: Colors.white,
           ),
         ],
-        backgroundColor: Colors.red,
+        backgroundColor: Colors.yellow.shade200,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -33,17 +33,18 @@ class _Info1 extends State {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              decoration: const BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        color: Color.fromARGB(255, 179, 176, 176),
-                        offset: Offset(10, 10),
-                        blurRadius: 8),
-                  ],
-                  borderRadius: BorderRadius.all(
-                    Radius.circular(20),
-                  ),
-                  color: Color.fromARGB(255, 223, 183, 167)),
+              decoration: BoxDecoration(
+                boxShadow: const [
+                  BoxShadow(
+                      color: Color.fromARGB(255, 179, 176, 176),
+                      offset: Offset(10, 10),
+                      blurRadius: 8),
+                ],
+                borderRadius: const BorderRadius.all(
+                  Radius.circular(20),
+                ),
+                color: Colors.yellow.shade100,
+              ),
               alignment: Alignment.center,
               width: 400,
               height: 520,
@@ -54,7 +55,7 @@ class _Info1 extends State {
                     Column(
                       children: [
                         Text(
-                          "Tamato Information",
+                          "Milk Information",
                           style: TextStyle(
                             fontSize: 25,
                             fontWeight: FontWeight.w500,
@@ -79,7 +80,7 @@ class _Info1 extends State {
   ''',
                           style: TextStyle(
                             fontSize: 20,
-                            fontWeight: FontWeight.w500,
+                            fontWeight: FontWeight.w300,
                           ),
                         ),
                       ],
