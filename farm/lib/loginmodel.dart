@@ -52,3 +52,30 @@ class Tomato {
     return '{orderId:$orderId, name:$name, quantity:$quantity, address:$address}';
   }
 }
+
+//Layfinger model class.
+class Ladyfinger {
+  int? orderId;
+  String custname;
+  String quantity;
+  String address;
+
+  Ladyfinger(
+      {this.orderId,
+      required this.custname,
+      required this.quantity,
+      required this.address});
+
+  Map<String, dynamic> ladyMap() {
+    return {
+      'custname': custname,
+      'quantity': quantity,
+      'address': address,
+    };
+  }
+
+  @override
+  String toString() {
+    return '{orderId:$orderId, custname:$custname, quantity:$quantity, address:$address}';
+  }
+}
