@@ -364,6 +364,8 @@ class _Tamato extends State {
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.blue.shade300)),
                   onPressed: () async {
+                    setState(() {});
+
                     submitData();
                     List retTomatoList = await retTomatoData();
                     tomatoOrderList = retTomatoList;
@@ -397,6 +399,7 @@ class _Tamato extends State {
         quantity: quantityController.text,
         address: addressController.text,
       );
+
       insertTomatoData(tomatoObj);
     }
     Navigator.of(context).pop();

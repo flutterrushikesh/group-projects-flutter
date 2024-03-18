@@ -192,9 +192,6 @@ class _PineApple extends State {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // Text(
-                            //   tomatoOrderList[index].orderId,
-                            // ),
                             Text(
                               pinOrederList[index].custname,
                               style: GoogleFonts.jost(

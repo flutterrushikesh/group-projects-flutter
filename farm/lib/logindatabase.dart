@@ -125,3 +125,19 @@ Future<void> insertBanana(BananaModel obj) async {
     conflictAlgorithm: ConflictAlgorithm.replace,
   );
 }
+
+Future<List<BananaModel>> retBananaData() async {
+  final localDB = await database;
+
+  List<Map<String, dynamic>> retBananaList = await localDB.query('Banana');
+  return List.generate(
+    retBananaList.length,
+    (i) {
+      return BananaModel(
+          orderId: retBananaList[i]['orderId'],
+          custname: retBananaList[i]['custname'],
+          quantity: retBananaList[i]['quantity'],
+          address: retBananaList[i]['address']);
+    },
+  );
+}

@@ -3,6 +3,7 @@ import 'package:farm/logindatabase.dart';
 import 'package:farm/loginmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 class Banana extends StatefulWidget {
   const Banana({super.key});
@@ -14,6 +15,18 @@ class _Banana extends State {
   TextEditingController custNameController = TextEditingController();
   TextEditingController quantityController = TextEditingController();
   TextEditingController addressController = TextEditingController();
+
+  List bananaOrderList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    Future.delayed(Duration.zero, () async {
+      List retBananaList = await retBananaData();
+      bananaOrderList = retBananaList;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -149,7 +162,123 @@ class _Banana extends State {
                   ),
                 ),
               ],
-            )
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: bananaOrderList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Slidable(
+                    closeOnScroll: true,
+                    endActionPane: ActionPane(
+                      extentRatio: 0.2,
+                      motion: const DrawerMotion(),
+                      children: [
+                        Expanded(
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              const SizedBox(height: 0),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {});
+                                },
+                                child: Container(
+                                  padding: const EdgeInsets.all(10),
+                                  height: 40,
+                                  width: 40,
+                                  decoration: BoxDecoration(
+                                    color: Colors.blue.shade300,
+                                    borderRadius: const BorderRadius.all(
+                                      Radius.circular(20),
+                                    ),
+                                  ),
+                                  child: const Icon(
+                                    Icons.edit,
+                                    color: Colors.white,
+                                    size: 20,
+                                  ),
+                                ),
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  setState(() {});
+                                },
+                                child: Container(
+                                  height: 40,
+                                  width: 40,
+                                  decoration: const BoxDecoration(
+                                    color: Colors.red,
+                                    borderRadius: BorderRadius.all(
+                                      Radius.circular(
+                                        20,
+                                      ),
+                                    ),
+                                  ),
+                                  child: const Icon(
+                                    Icons.delete,
+                                    color: Colors.white,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    child: Container(
+                      width: double.infinity,
+                      margin: const EdgeInsets.all(15),
+                      padding: const EdgeInsets.all(15),
+                      decoration: BoxDecoration(
+                          color: Colors.grey.shade200,
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(20),
+                          ),
+                          boxShadow: const [
+                            BoxShadow(
+                              color: Color.fromARGB(255, 186, 185, 185),
+                              blurRadius: 8,
+                              offset: Offset(10, 10),
+                            ),
+                          ]),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          // Text(
+                          //   tomatoOrderList[index].orderId,
+                          // ),
+                          Text(
+                            bananaOrderList[index].custname,
+                            style: GoogleFonts.jost(
+                              fontWeight: FontWeight.w500,
+                              fontSize: 25,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "${bananaOrderList[index].quantity} darzan",
+                            style: GoogleFonts.jost(
+                              fontSize: 20,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            bananaOrderList[index].address,
+                            style: GoogleFonts.jost(
+                              fontSize: 20,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
           ],
         ),
       ),
@@ -212,7 +341,7 @@ class _Banana extends State {
               TextFormField(
                 controller: quantityController,
                 decoration: const InputDecoration(
-                  label: Text("Enter quantity in KG"),
+                  label: Text("Enter quantity in darzan"),
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.all(
                       Radius.circular(20),
@@ -276,8 +405,10 @@ class _Banana extends State {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.blue.shade300)),
-                  onPressed: () {
+                  onPressed: () async {
                     submitData();
+                    List retBananaList = await retBananaData();
+                    bananaOrderList = retBananaList;
                   },
                   child: Text(
                     "Buy now",
@@ -311,6 +442,7 @@ class _Banana extends State {
       insertBanana(orderObj);
       clearControllers();
     }
+    Navigator.of(context).pop();
   }
 
   void clearControllers() {
