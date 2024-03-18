@@ -43,7 +43,6 @@ void main() async {
       )''');
     },
   );
-  print(await retPinData());
 }
 
 // print(await retData());

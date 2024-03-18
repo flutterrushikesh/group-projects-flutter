@@ -1,6 +1,5 @@
 // import 'package:farm/vegetable/tamato/creat.dart';
 // import 'package:farm/vegetable/tamato/info1.dart';
-import 'dart:developer';
 import 'package:farm/vegetable/tamato/info1.dart';
 import 'package:flutter/material.dart';
 import 'package:farm/loginmodel.dart';
@@ -22,7 +21,6 @@ class _Tamato extends State {
 
   @override
   void initState() {
-    log("In init state");
     super.initState();
     Future.delayed(Duration.zero, () async {
       List retTomatoList = await retTomatoData();
@@ -33,7 +31,6 @@ class _Tamato extends State {
 
   @override
   Widget build(BuildContext context) {
-    log("IN BUILD");
     return Scaffold(
       backgroundColor: Colors.grey.shade300,
       appBar: AppBar(
@@ -212,7 +209,7 @@ class _Tamato extends State {
                               height: 10,
                             ),
                             Text(
-                              "Quantity : ${tomatoOrderList[index].quantity}",
+                              "Quantity : ${tomatoOrderList[index].quantity} kg",
                               style: GoogleFonts.jost(
                                 fontSize: 18,
                               ),

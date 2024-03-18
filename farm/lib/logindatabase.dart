@@ -17,9 +17,9 @@ Future<void> insertData(Login obj) async {
   );
 }
 
-Future<List<Login>> retData() async {
+Future<List> retData() async {
   final localDB = await database;
-  List<Map<String, dynamic>> retList = await localDB.query("Sign");
+  List retList = await localDB.query("Sign");
   return List.generate(
     retList.length,
     (i) {
@@ -52,7 +52,6 @@ Future<List<Tomato>> retTomatoData() async {
   return List.generate(
     retList.length,
     (i) {
-      print(retList[i]['orderId']);
       return Tomato(
         orderId: retList[i]['orderId'],
         name: retList[i]['name'],
@@ -81,7 +80,6 @@ Future<List<LadyfingerModel>> retLadyData() async {
   return List.generate(
     retLadyList.length,
     (i) {
-      print(retLadyList[i]['orderId']);
       return LadyfingerModel(
         orderId: retLadyList[i]['orderId'],
         custname: retLadyList[i]['custname'],

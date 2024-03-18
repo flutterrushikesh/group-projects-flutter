@@ -65,7 +65,7 @@ class _HomePage extends State {
                         });
                       },
                       // margin: const EdgeInsets.only(left: 10),
-                      child: const Text("   Aout us"),
+                      child: const Text("   Info"),
                     ),
                   ],
                 ),

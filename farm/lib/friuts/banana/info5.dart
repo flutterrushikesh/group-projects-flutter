@@ -25,7 +25,7 @@ class _Info5 extends State {
             color: Colors.white,
           ),
         ],
-        backgroundColor: Colors.yellow.shade200,
+        backgroundColor: Colors.yellow.shade400,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),

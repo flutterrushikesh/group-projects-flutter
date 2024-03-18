@@ -47,7 +47,7 @@ class _Banana extends State {
             color: Colors.white,
           ),
         ],
-        backgroundColor: Colors.yellow.shade200,
+        backgroundColor: Colors.yellow.shade400,
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
@@ -264,7 +264,7 @@ class _Banana extends State {
                             height: 10,
                           ),
                           Text(
-                            "Quantity : ${bananaOrderList[index].quantity}",
+                            "Quantity : ${bananaOrderList[index].quantity} dozen",
                             style: GoogleFonts.jost(
                               fontSize: 18,
                             ),
@@ -299,11 +299,6 @@ class _Banana extends State {
 
   void bottonSheet() {
     showModalBottomSheet(
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(
-          Radius.circular(50),
-        ),
-      ),
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {
@@ -423,6 +418,7 @@ class _Banana extends State {
                     submitData();
                     List retBananaList = await retBananaData();
                     bananaOrderList = retBananaList;
+                    print(await retBananaData());
                   },
                   child: Text(
                     "Buy now",

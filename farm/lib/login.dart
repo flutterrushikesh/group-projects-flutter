@@ -425,11 +425,12 @@ class _LoginScreenState extends State {
                             ],
                           ),
                           child: ElevatedButton(
-                            onPressed: () {
+                            onPressed: () async {
                               setState(() {
                                 addData();
                                 clearControllers();
                               });
+                              print(await retData());
                             },
                             style: const ButtonStyle(
                               shape: MaterialStatePropertyAll(
