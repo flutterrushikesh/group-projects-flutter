@@ -24,6 +24,7 @@ class _Banana extends State {
     Future.delayed(Duration.zero, () async {
       List retBananaList = await retBananaData();
       bananaOrderList = retBananaList;
+      setState(() {});
     });
   }
 
@@ -248,18 +249,9 @@ class _Banana extends State {
                           //   tomatoOrderList[index].orderId,
                           // ),
                           Text(
-                            bananaOrderList[index].custname,
+                            "Cust Name : ${bananaOrderList[index].custname}",
                             style: GoogleFonts.jost(
                               fontWeight: FontWeight.w500,
-                              fontSize: 25,
-                            ),
-                          ),
-                          const SizedBox(
-                            height: 10,
-                          ),
-                          Text(
-                            "${bananaOrderList[index].quantity} darzan",
-                            style: GoogleFonts.jost(
                               fontSize: 20,
                             ),
                           ),
@@ -267,9 +259,18 @@ class _Banana extends State {
                             height: 10,
                           ),
                           Text(
-                            bananaOrderList[index].address,
+                            "Quantity : ${bananaOrderList[index].quantity}",
                             style: GoogleFonts.jost(
-                              fontSize: 20,
+                              fontSize: 18,
+                            ),
+                          ),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Address : ${bananaOrderList[index].address}",
+                            style: GoogleFonts.jost(
+                              fontSize: 18,
                             ),
                           ),
                         ],
@@ -340,6 +341,7 @@ class _Banana extends State {
               const SizedBox(height: 25),
               TextFormField(
                 controller: quantityController,
+                keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
                   label: Text("Enter quantity in darzan"),
                   enabledBorder: OutlineInputBorder(
@@ -406,6 +408,7 @@ class _Banana extends State {
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.blue.shade300)),
                   onPressed: () async {
+                    setState(() {});
                     submitData();
                     List retBananaList = await retBananaData();
                     bananaOrderList = retBananaList;

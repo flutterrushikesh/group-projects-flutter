@@ -202,19 +202,19 @@ class _Tamato extends State {
                             //   tomatoOrderList[index].orderId,
                             // ),
                             Text(
-                              "Cust Name : ${tomatoOrderList[index].name}",
+                              "Cust Name : ${tomatoOrderList[index].custname}",
                               style: GoogleFonts.jost(
                                 fontWeight: FontWeight.w500,
-                                fontSize: 22,
+                                fontSize: 20,
                               ),
                             ),
                             const SizedBox(
                               height: 10,
                             ),
                             Text(
-                              "Quantity : ${tomatoOrderList[index].quantity} kg",
+                              "Quantity : ${tomatoOrderList[index].quantity}",
                               style: GoogleFonts.jost(
-                                fontSize: 20,
+                                fontSize: 18,
                               ),
                             ),
                             const SizedBox(
@@ -223,7 +223,7 @@ class _Tamato extends State {
                             Text(
                               "Address : ${tomatoOrderList[index].address}",
                               style: GoogleFonts.jost(
-                                fontSize: 20,
+                                fontSize: 18,
                               ),
                             ),
                           ],
