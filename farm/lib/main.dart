@@ -35,6 +35,12 @@ void main() async {
         quantity TEXT ,
         address TEXT
       )''');
+      await db.execute('''CREATE TABLE Banana(
+        orderId  INTEGER  PRIMARY KEY AUTOINCREMENT,
+        custname TEXT,
+        quantity TEXT ,
+        address TEXT
+      )''');
     },
   );
   print(await retPinData());

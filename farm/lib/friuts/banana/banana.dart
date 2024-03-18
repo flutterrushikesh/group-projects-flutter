@@ -1,4 +1,6 @@
 import 'package:farm/friuts/banana/info5.dart';
+import 'package:farm/logindatabase.dart';
+import 'package:farm/loginmodel.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -156,11 +158,11 @@ class _Banana extends State {
 
   void bottonSheet() {
     showModalBottomSheet(
-      // shape: const RoundedRectangleBorder(
-      //   borderRadius: BorderRadius.all(
-      //     Radius.circular(50),
-      //   ),
-      // ),
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.all(
+          Radius.circular(50),
+        ),
+      ),
       context: context,
       isScrollControlled: true,
       builder: (BuildContext context) {
@@ -274,7 +276,9 @@ class _Banana extends State {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.blue.shade300)),
-                  onPressed: () {},
+                  onPressed: () {
+                    submitData();
+                  },
                   child: Text(
                     "Buy now",
                     style: GoogleFonts.quicksand(
@@ -293,5 +297,25 @@ class _Banana extends State {
         );
       },
     );
+  }
+
+  void submitData() {
+    if (custNameController.text.trim().isNotEmpty &&
+        quantityController.text.trim().isNotEmpty &&
+        addressController.text.trim().isNotEmpty) {
+      BananaModel orderObj = BananaModel(
+          custname: custNameController.text,
+          quantity: quantityController.text,
+          address: addressController.text);
+
+      insertBanana(orderObj);
+      clearControllers();
+    }
+  }
+
+  void clearControllers() {
+    custNameController.clear();
+    quantityController.clear();
+    addressController.clear();
   }
 }

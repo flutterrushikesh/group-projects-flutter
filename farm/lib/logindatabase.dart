@@ -1,5 +1,8 @@
+import 'dart:developer';
+
 import 'package:farm/loginmodel.dart';
 import 'package:sqflite/sqflite.dart';
+import 'package:sqflite/sql.dart';
 import 'package:sqflite/sqlite_api.dart';
 
 dynamic database;
@@ -44,6 +47,8 @@ Future<List<Tomato>> retTomatoData() async {
   final localDB = await database;
 
   List retList = await localDB.query('Tomato');
+  log("IN RET TOMATO DATA");
+  log(retList.toString());
   return List.generate(
     retList.length,
     (i) {
@@ -108,4 +113,15 @@ Future<List<PineAppleModel>> retPinData() async {
         quantity: retPinList[i]['quantity'],
         address: retPinList[i]['address']);
   });
+}
+
+//banana Database
+Future<void> insertBanana(BananaModel obj) async {
+  final localDB = await database;
+
+  await localDB.insert(
+    'Banana',
+    obj.bananaMap(),
+    conflictAlgorithm: ConflictAlgorithm.replace,
+  );
 }

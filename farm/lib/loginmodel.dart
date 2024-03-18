@@ -106,3 +106,30 @@ class PineAppleModel {
     return '{orderId:$orderId, custname:$custname, quantity:$quantity, address:$address}';
   }
 }
+
+//Banana Model class
+class BananaModel {
+  int? orderId;
+  String custname;
+  String quantity;
+  String address;
+
+  BananaModel(
+      {this.orderId,
+      required this.custname,
+      required this.quantity,
+      required this.address});
+
+  Map<String, dynamic> bananaMap() {
+    return {
+      'custname': custname,
+      'quantity': quantity,
+      'address': address,
+    };
+  }
+
+  @override
+  String toString() {
+    return '{orderId:$orderId, custname:$custname, quantity:$quantity, address:$address}';
+  }
+}
