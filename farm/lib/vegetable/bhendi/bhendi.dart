@@ -1,3 +1,6 @@
+import 'dart:developer';
+import 'package:farm/logindatabase.dart';
+import 'package:farm/loginmodel.dart';
 import 'package:farm/vegetable/bhendi/info2.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -12,6 +15,19 @@ class _Ladyfinger extends State {
   TextEditingController custNameController = TextEditingController();
   TextEditingController quantityController = TextEditingController();
   TextEditingController addressController = TextEditingController();
+
+  List ladyOrderList = [];
+
+  @override
+  void initState() {
+    log("In init state");
+    super.initState();
+    Future.delayed(Duration.zero, () async {
+      List retladyList = await retLadyData();
+      ladyOrderList = retladyList;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,128 +49,180 @@ class _Ladyfinger extends State {
         ],
         backgroundColor: Colors.green,
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            children: [
-              Container(
-                decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        "assets/images/tamato2.png",
-                      ),
-                      // opacity: 0.9,
-                      // opacity: 0.3,
-                      fit: BoxFit.fill,
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            Container(
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                      "assets/images/tamato2.png",
                     ),
+                    // opacity: 0.9,
+                    // opacity: 0.3,
+                    fit: BoxFit.fill,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(255, 179, 176, 176),
+                      offset: Offset(10, 10),
+                      blurRadius: 8,
+                    ),
+                  ],
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20),
+                  ),
+                  color: Color.fromARGB(255, 228, 163, 122)),
+              alignment: Alignment.center,
+              width: 400,
+              height: 200,
+
+              // padding: const EdgeInsets.all(8),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  width: 150,
+                  decoration: const BoxDecoration(
                     boxShadow: [
                       BoxShadow(
-                        color: Color.fromARGB(255, 179, 176, 176),
-                        offset: Offset(10, 10),
+                        color: Color.fromARGB(255, 186, 185, 185),
                         blurRadius: 8,
+                        offset: Offset(5, 5),
                       ),
                     ],
-                    borderRadius: BorderRadius.all(
-                      Radius.circular(20),
-                    ),
-                    color: Color.fromARGB(255, 228, 163, 122)),
-                alignment: Alignment.center,
-                width: 400,
-                height: 200,
-
-                // padding: const EdgeInsets.all(8),
-              ),
-              const SizedBox(
-                height: 30,
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    width: 150,
-                    decoration: const BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromARGB(255, 186, 185, 185),
-                          blurRadius: 8,
-                          offset: Offset(5, 5),
-                        ),
-                      ],
-                    ),
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        shape: const MaterialStatePropertyAll(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
+                  ),
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      shape: const MaterialStatePropertyAll(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
                           ),
                         ),
-                        backgroundColor:
-                            MaterialStatePropertyAll(Colors.blue.shade300),
                       ),
-                      onPressed: () {
-                        setState(() {
-                          Navigator.of(context).push(
-                            MaterialPageRoute(
-                              builder: (context) => const Info2(),
-                            ),
-                          );
-                        });
-                      },
-                      child: Text(
-                        'Info',
-                        style: GoogleFonts.quicksand(
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                          fontSize: 23,
-                        ),
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.blue.shade300),
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const Info2(),
+                          ),
+                        );
+                      });
+                    },
+                    child: Text(
+                      'Info',
+                      style: GoogleFonts.quicksand(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                        fontSize: 23,
                       ),
                     ),
                   ),
-                  Container(
-                    width: 150,
-                    decoration: const BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                          color: Color.fromARGB(255, 186, 185, 185),
-                          blurRadius: 8,
-                          offset: Offset(5, 5),
-                        ),
-                      ],
-                    ),
-                    child: ElevatedButton(
-                      style: ButtonStyle(
-                        shape: const MaterialStatePropertyAll(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10),
-                            ),
+                ),
+                Container(
+                  width: 150,
+                  decoration: const BoxDecoration(
+                    boxShadow: [
+                      BoxShadow(
+                        color: Color.fromARGB(255, 186, 185, 185),
+                        blurRadius: 8,
+                        offset: Offset(5, 5),
+                      ),
+                    ],
+                  ),
+                  child: ElevatedButton(
+                    style: ButtonStyle(
+                      shape: const MaterialStatePropertyAll(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.all(
+                            Radius.circular(10),
                           ),
                         ),
-                        backgroundColor:
-                            MaterialStatePropertyAll(Colors.blue.shade300),
                       ),
-                      onPressed: () {
-                        setState(() {
-                          bottonSheet();
-                        });
-                      },
-                      child: Text(
-                        'Buy',
-                        style: GoogleFonts.quicksand(
-                          fontWeight: FontWeight.w600,
-                          color: Colors.black,
-                          fontSize: 23,
-                        ),
+                      backgroundColor:
+                          MaterialStatePropertyAll(Colors.blue.shade300),
+                    ),
+                    onPressed: () {
+                      setState(() {
+                        bottonSheet();
+                      });
+                    },
+                    child: Text(
+                      'Buy',
+                      style: GoogleFonts.quicksand(
+                        fontWeight: FontWeight.w600,
+                        color: Colors.black,
+                        fontSize: 23,
                       ),
                     ),
                   ),
-                ],
-              )
-            ],
-          ),
+                ),
+              ],
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: ladyOrderList.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return Column(
+                    children: [
+                      Container(
+                        width: double.infinity,
+                        margin: const EdgeInsets.all(15),
+                        padding: const EdgeInsets.all(15),
+                        decoration: BoxDecoration(
+                            color: Colors.grey.shade200,
+                            borderRadius: const BorderRadius.all(
+                              Radius.circular(20),
+                            ),
+                            boxShadow: const [
+                              BoxShadow(
+                                color: Color.fromARGB(255, 186, 185, 185),
+                                blurRadius: 8,
+                                offset: Offset(5, 5),
+                              ),
+                            ]),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // Text(
+                            //   ladyOrderList[index].orderId,
+                            // ),
+                            Text(
+                              ladyOrderList[index].custname,
+                              style: GoogleFonts.jost(
+                                fontSize: 20,
+                              ),
+                            ),
+                            Text(
+                              "${ladyOrderList[index].quantity} kg",
+                              style: GoogleFonts.jost(
+                                fontSize: 20,
+                              ),
+                            ),
+                            Text(
+                              ladyOrderList[index].address,
+                              style: GoogleFonts.jost(
+                                fontSize: 20,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+          ],
         ),
       ),
     );
@@ -215,6 +283,7 @@ class _Ladyfinger extends State {
               const SizedBox(height: 25),
               TextFormField(
                 controller: quantityController,
+                keyboardType: TextInputType.number,
                 decoration: const InputDecoration(
                   label: Text("Enter quantity in KG"),
                   enabledBorder: OutlineInputBorder(
@@ -280,7 +349,11 @@ class _Ladyfinger extends State {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStatePropertyAll(Colors.blue.shade300)),
-                  onPressed: () {},
+                  onPressed: () async {
+                    submitData();
+                    List retLadyList = await retLadyData();
+                    ladyOrderList = retLadyList;
+                  },
                   child: Text(
                     "Buy now",
                     style: GoogleFonts.quicksand(
@@ -299,5 +372,26 @@ class _Ladyfinger extends State {
         );
       },
     );
+  }
+
+  void submitData() {
+    if (custNameController.text.trim().isNotEmpty &&
+        quantityController.text.trim().isNotEmpty &&
+        addressController.text.trim().isNotEmpty) {
+      LadyfingerModel ladyObj = LadyfingerModel(
+        custname: custNameController.text,
+        quantity: quantityController.text,
+        address: addressController.text,
+      );
+      insertLady(ladyObj);
+    }
+    Navigator.of(context).pop();
+    clearControllers();
+  }
+
+  void clearControllers() {
+    custNameController.clear();
+    quantityController.clear();
+    addressController.clear();
   }
 }
