@@ -54,13 +54,13 @@ class Tomato {
 }
 
 //Layfinger model class.
-class Ladyfinger {
+class LadyfingerModel {
   int? orderId;
   String custname;
   String quantity;
   String address;
 
-  Ladyfinger(
+  LadyfingerModel(
       {this.orderId,
       required this.custname,
       required this.quantity,

@@ -55,4 +55,33 @@ Future<List<Tomato>> retTomatoData() async {
       );
     },
   );
-} 
+}
+
+//Lady finger database.
+Future<void> insertLady(LadyfingerModel obj) async {
+  final localDB = await database;
+
+  await localDB.insert(
+    'Ladyfinger',
+    obj.ladyMap(),
+    conflictAlgorithm: ConflictAlgorithm.replace,
+  );
+}
+
+Future<List<LadyfingerModel>> retLadyData() async {
+  final localDB = await database;
+
+  List retLadyList = await localDB.query('Ladyfinger');
+  return List.generate(
+    retLadyList.length,
+    (i) {
+      print(retLadyList[i]['orderId']);
+      return LadyfingerModel(
+        orderId: retLadyList[i]['orderId'],
+        custname: retLadyList[i]['custname'],
+        quantity: retLadyList[i]['quantity'],
+        address: retLadyList[i]['address'],
+      );
+    },
+  );
+}
