@@ -6,7 +6,6 @@ import 'logindatabase.dart';
 
 void main() async {
   runApp(const MyApp());
-
   database = openDatabase(
     join(await getDatabasesPath(), "Info1DB.db"),
     version: 1,
