@@ -168,148 +168,148 @@ class _ToDoAppState extends State<ToDoApp> {
                   const SizedBox(
                     height: 5,
                   ),
-                  const Row(
+                  Row(
                     children: [
-                      SizedBox(
+                      const SizedBox(
                         width: 10,
                       ),
-                      // GestureDetector(
-                      //   onTap: () {
-                      //     setState(() {
-                      //       pressedButton = 'All';
-                      //       status = 'All';
-                      //       searchList = allTasks;
-                      //       updateDisplayList(status);
-                      //     });
-                      //   },
-                      //   child: Container(
-                      //     height: 40,
-                      //     padding: const EdgeInsets.symmetric(
-                      //       horizontal: 10,
-                      //     ),
-                      //     decoration: const BoxDecoration(
-                      //       color: Colors.deepPurple,
-                      //       borderRadius: BorderRadius.all(
-                      //         Radius.circular(
-                      //           8,
-                      //         ),
-                      //       ),
-                      //     ),
-                      //     child: Center(
-                      //       child: Row(
-                      //         mainAxisAlignment: MainAxisAlignment.center,
-                      //         children: [
-                      //           Text(
-                      //             'All',
-                      //             style: GoogleFonts.poppins(
-                      //               color: Colors.white,
-                      //             ),
-                      //           ),
-                      //           Icon(
-                      //             (pressedButton == 'All')
-                      //                 ? Icons.arrow_drop_up
-                      //                 : Icons.arrow_drop_down,
-                      //             color: Colors.white,
-                      //           ),
-                      //         ],
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                      // const SizedBox(
-                      //   width: 10,
-                      // ),
-                      // GestureDetector(
-                      //   onTap: () {
-                      //     setState(() {
-                      //       pressedButton = 'Ongoing';
-                      //       status = 'Ongoing';
-                      //       filterOnGoingTasks();
-                      //       searchList = ongoingTasks;
-                      //       updateDisplayList(status);
-                      //     });
-                      //   },
-                      //   child: Container(
-                      //     height: 40,
-                      //     padding: const EdgeInsets.symmetric(
-                      //       horizontal: 10,
-                      //     ),
-                      //     decoration: const BoxDecoration(
-                      //       color: Colors.orange,
-                      //       borderRadius: BorderRadius.all(
-                      //         Radius.circular(
-                      //           8,
-                      //         ),
-                      //       ),
-                      //     ),
-                      //     child: Center(
-                      //       child: Row(
-                      //         mainAxisAlignment: MainAxisAlignment.center,
-                      //         children: [
-                      //           Text(
-                      //             'Ongoing',
-                      //             style: GoogleFonts.poppins(
-                      //               color: Colors.white,
-                      //             ),
-                      //           ),
-                      //           Icon(
-                      //             (pressedButton == 'Ongoing')
-                      //                 ? Icons.arrow_drop_up
-                      //                 : Icons.arrow_drop_down,
-                      //             color: Colors.white,
-                      //           ),
-                      //         ],
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
-                      // const SizedBox(
-                      //   width: 10,
-                      // ),
-                      // GestureDetector(
-                      //   onTap: () {
-                      //     setState(() {
-                      //       pressedButton = 'Completed';
-                      //       status = 'Completed';
-                      //       filterCompletedTasks();
-                      //       searchList = completedTasks;
-                      //       updateDisplayList(status);
-                      //     });
-                      //   },
-                      //   child: Container(
-                      //     padding: const EdgeInsets.symmetric(
-                      //       horizontal: 10,
-                      //     ),
-                      //     height: 40,
-                      //     decoration: const BoxDecoration(
-                      //       color: Colors.green,
-                      //       borderRadius: BorderRadius.all(
-                      //         Radius.circular(
-                      //           8,
-                      //         ),
-                      //       ),
-                      //     ),
-                      //     child: Center(
-                      //       child: Row(
-                      //         mainAxisAlignment: MainAxisAlignment.center,
-                      //         children: [
-                      //           Text(
-                      //             'Completed',
-                      //             style: GoogleFonts.poppins(
-                      //               color: Colors.white,
-                      //             ),
-                      //           ),
-                      //           Icon(
-                      //             (pressedButton == 'Completed')
-                      //                 ? Icons.arrow_drop_up_outlined
-                      //                 : Icons.arrow_drop_down_outlined,
-                      //             color: Colors.white,
-                      //           ),
-                      //         ],
-                      //       ),
-                      //     ),
-                      //   ),
-                      // ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            pressedButton = 'All';
+                            status = 'All';
+                            searchList = allTasks;
+                            updateDisplayList(status);
+                          });
+                        },
+                        child: Container(
+                          height: 40,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                          ),
+                          decoration: const BoxDecoration(
+                            color: Colors.deepPurple,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(
+                                8,
+                              ),
+                            ),
+                          ),
+                          child: Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'All',
+                                  style: GoogleFonts.poppins(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Icon(
+                                  (pressedButton == 'All')
+                                      ? Icons.arrow_drop_up
+                                      : Icons.arrow_drop_down,
+                                  color: Colors.white,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            pressedButton = 'Ongoing';
+                            status = 'Ongoing';
+                            filterOnGoingTasks();
+                            searchList = ongoingTasks;
+                            updateDisplayList(status);
+                          });
+                        },
+                        child: Container(
+                          height: 40,
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                          ),
+                          decoration: const BoxDecoration(
+                            color: Colors.orange,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(
+                                8,
+                              ),
+                            ),
+                          ),
+                          child: Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Ongoing',
+                                  style: GoogleFonts.poppins(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Icon(
+                                  (pressedButton == 'Ongoing')
+                                      ? Icons.arrow_drop_up
+                                      : Icons.arrow_drop_down,
+                                  color: Colors.white,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(
+                        width: 10,
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            pressedButton = 'Completed';
+                            status = 'Completed';
+                            filterCompletedTasks();
+                            searchList = completedTasks;
+                            updateDisplayList(status);
+                          });
+                        },
+                        child: Container(
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 10,
+                          ),
+                          height: 40,
+                          decoration: const BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.all(
+                              Radius.circular(
+                                8,
+                              ),
+                            ),
+                          ),
+                          child: Center(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Completed',
+                                  style: GoogleFonts.poppins(
+                                    color: Colors.white,
+                                  ),
+                                ),
+                                Icon(
+                                  (pressedButton == 'Completed')
+                                      ? Icons.arrow_drop_up_outlined
+                                      : Icons.arrow_drop_down_outlined,
+                                  color: Colors.white,
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                   todoCard(),
